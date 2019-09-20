@@ -1,6 +1,5 @@
-
-	# Just do it ! # 
-	## My todo list : ##
+# Just do it ! # 
+## My todo list : ##
 	
  To do list | Fait ?
  ---------- | ----------
