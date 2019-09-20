@@ -18,6 +18,7 @@ public class Garage {
 	String contenuDuFichierGarageTxt = "";
 	public int nombreDeVoiture = 0;// Compteur de voitures pour l'affichage final
 	List<String> voitures = new ArrayList<>();// Liste détaillée des voitures créées
+	public int valeurGarage = 0;
 	
 	
 	public void add(Vehicule voit) {
@@ -63,6 +64,14 @@ public class Garage {
 					bw.write(line);//on écrit une ligne de la liste dans le fichier
 					bw.newLine();//A la ligne
 				}
+				bw.newLine();
+				bw.write("/** PROGRAMMATION EN COURS");
+				bw.newLine();
+				bw.write("* Si la valeur du garage vaut 0: le developpement de l'application n'est pas encore fini.");
+				bw.newLine();
+				bw.write("*/");
+				bw.newLine();
+				bw.write(" - Valeur du garage: " + this.getValeurGarage());
 				
 				bw.close();//Fermeture de la mémoire tampon
 				writer.close();//Fermeture du writer
@@ -117,5 +126,27 @@ public class Garage {
 			} // Ferme catch (IOException e)
 		} // Ferme 		if(file.exists())
 	} // Ferme public void lireGarageTxt()
+	
+	
+	// Nouvelle méthode demandée par Julien: calculer la valeur du stock du garage
+	public void calculerValeurStock() {
+		int valeurStock = 0;
+		setValeurGarage(valeurStock);
+	}
+
+	// Les accesseurs et mutateurs de la valeur du garage
+	public int getValeurGarage() {
+		return valeurGarage;
+	}
+
+	public void setValeurGarage(int valeurGarage) {
+		this.valeurGarage = valeurGarage;
+	}
+	
+	
+	
+	
+	
+	
 } // Ferme public class Garage 
 
