@@ -82,7 +82,7 @@ public class Garage {
 				bw.newLine();
 				bw.write(" - Liste des vehicules les moins chers par prix croissants");
 				bw.newLine();
-                bw.write(getListeVehiculesMoinsChersToString());				
+                bw.write(getVoituresMoinsCher());				
 				
 				
 				bw.close();//Fermeture de la mémoire tampon
@@ -166,7 +166,7 @@ public class Garage {
 		this.valeurGarage = double1;
 	}
 
-	public String getListeVehiculesMoinsChersToString() {
+	public String getVoituresMoinsCher() {
 		trierVehiculesMoinsChers();
 		int i = 0;
 		for(Vehicule vehicule:listeVehicules) {
