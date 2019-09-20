@@ -12,6 +12,7 @@ public class Vehicule extends Garage {
 	private TypeMoteur moteurType;
 	private String moteurCylindre;
 	private Double prixTotalOptions = 0.0; // Initialise le prix total du véhicule sans option
+	private Double prixTotalVehicule = 0.0;
 	
 	
 	/** Constructeurs simple
@@ -154,4 +155,35 @@ public class Vehicule extends Garage {
 	public Double getPrixTotalOptions() {
 		return prixTotalOptions;
 	}
+
+	public Double getPrixTotalVehicule() {
+		return this.prixSansOption+this.prixTotalOptions;
+	}
+
+	public void setPrixTotalVehicule(Double prixTotalVehicule) {
+		this.prixTotalVehicule = prixTotalVehicule;
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicule [nomDuVehicule=" + nomDuVehicule + ", prixSansOption=" + prixSansOption + ", options="
+				+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="
+				+ moteurCylindre + ", prixTotalOptions=" + prixTotalOptions + ", prixTotalVehicule=" + getPrixTotalVehicule()
+				+ "]";
+	}
+
+	public String toStringSortByPrice() {
+		if(prixTotalOptions == 0) {
+			return "Vehicule " + nomDuVehicule + ", prix total avec options: " + getPrixTotalVehicule() + " (prixSansOption=" + prixSansOption + ", options="
+					+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="
+					+ moteurCylindre + ", prixTotalOptions= (ce vehicule n'a pas d'options)" 
+					+ ")";		
+		}
+		return "Vehicule " + nomDuVehicule + ", prix total avec options: " + getPrixTotalVehicule() + " (prixSansOption=" + prixSansOption + ", options="
+				+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="
+				+ moteurCylindre + ", prixTotalOptions=" + prixTotalOptions 
+				+ ")";
+	}
+	
 }

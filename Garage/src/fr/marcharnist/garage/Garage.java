@@ -10,26 +10,32 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+
+
 
 public class Garage {
 	
-	String nomFichierDeSauvegardeDuGarage = "Garage.txt"; // Le fichier texte qui va contenir la sauvegarde
-	String contenuDuFichierGarageTxt = "";
+	public String nomFichierDeSauvegardeDuGarage = "Garage.txt"; // Le fichier texte qui va contenir la sauvegarde
+	public String contenuDuFichierGarageTxt = "";
 	public int nombreDeVoiture = 0;// Compteur de voitures pour l'affichage final
-	List<String> voitures = new ArrayList<>();// Liste détaillée des voitures créées en mai 2019 une liste de string!
-	List<Vehicule> listeVehicules = new ArrayList<Vehicule>();// Créée pour Gecko 20/09/19 après formation ENI: liste d'objets!
-	public Double valeurGarage = 0.0;
+	public List<String> voitures = new ArrayList<>();// Liste détaillée des voitures créées en mai 2019 une liste de string!
+	public List<Vehicule> listeVehicules = new ArrayList<Vehicule>();// Créée pour Gecko 20/09/19 après formation ENI: liste d'objets!
+	private Double valeurGarage = 0.0;
+	private int nombreVehiculesMoinsChers = 3;
+	private String listeVehiculesMoinsChersToString = "";
 	
 	
 	public void add(Vehicule voit) {
 		// Déclare la variable voiture dans la méthode car elle ne sert qu'ici
+		int prixTotalVoiture = (int) (voit.getPrixSansOption() + voit.getPrixTotalOptions());
 		String voiture = " + Voiture " + voit.nomMarque + " : " + voit.getNomDuVehicule() 
 		+ " Moteur " + voit.getMoteurType() + " " + voit.getMoteurCylindre()
 		+ " (" + voit.getPrixSansOption() + " €) "
 		+ voit.options.toString()
 		+ " d'une valeur totale de "
-		+ (voit.getPrixTotalOptions() + voit.getPrixSansOption())
+		+ prixTotalVoiture
 		+ " €.";
 		
 		// Ajoute la voiture à la liste des voitures du garage: List<String> voitures
@@ -73,6 +79,11 @@ public class Garage {
 				}
 				bw.newLine();
 				bw.write(" - Valeur du garage: " + this.getValeurGarage());
+				bw.newLine();
+				bw.write(" - Liste des vehicules les moins chers par prix croissants");
+				bw.newLine();
+                bw.write(getListeVehiculesMoinsChersToString());				
+				
 				
 				bw.close();//Fermeture de la mémoire tampon
 				writer.close();//Fermeture du writer
@@ -133,9 +144,17 @@ public class Garage {
 	public void calculerValeurStock() {
 		double valeurStock = 0.0;
 		for(Vehicule vehicule : listeVehicules) {
-			valeurStock += vehicule.getPrixSansOption() + vehicule.getPrixTotalOptions();
+			valeurStock += vehicule.getPrixTotalVehicule();
 		}
 		setValeurGarage(valeurStock);
+	}
+	
+	// Tri n voitures les moins chères avec leurs options
+	public void trierVehiculesMoinsChers() {
+		
+		// Trie les véhicules de la liste en fonction d'un attribut. Ici: prix total du véhicule
+		listeVehicules.sort(Comparator.comparing(Vehicule::getPrixTotalVehicule));
+		
 	}
 
 	// Les accesseurs et mutateurs de la valeur du garage
@@ -146,6 +165,25 @@ public class Garage {
 	public void setValeurGarage(Double double1) {
 		this.valeurGarage = double1;
 	}
+
+	public String getListeVehiculesMoinsChersToString() {
+		trierVehiculesMoinsChers();
+		int i = 0;
+		for(Vehicule vehicule:listeVehicules) {
+			if(i < nombreVehiculesMoinsChers) {
+				this.listeVehiculesMoinsChersToString += "\t " + (i + 1) + ".- " + vehicule.toStringSortByPrice() + "\n";
+				i++;
+			}
+		}
+		return listeVehiculesMoinsChersToString;
+	}
+
+	public void setListeVehiculesMoinsChersToString(String listeVehiculesMoinsChers) {
+		this.listeVehiculesMoinsChersToString = listeVehiculesMoinsChers;
+	}
+	
+	
+	
 	
 } // Ferme public class Garage 
 
