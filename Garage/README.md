@@ -13,7 +13,7 @@
  afficher la valeur du stock du garage |
  afficher les 3 voitures les moins cher |
  
- EXERCICE 2 |
+ EXERCICE 2 | Fait?
  ---------- | ----------
  Supprimer les doublons entre deux listes d'objets. |
  Dans une classe JUnit, instancier deux listes de Vehicule. |
