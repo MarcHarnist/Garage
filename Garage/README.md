@@ -1,7 +1,7 @@
 # To do list #
 
  ## EXERCICE 1 ##
- ### Objectif:  Reproduire les classes: Garage, Vehicule, Option  ###
+ ### Objectif: Reproduire les classes: Garage, Vehicule, Option et deux implémentations d'option (GPS, Climatisation) du tutoriel OpenClassroom  ###
  
  EXERCICE 1 (Terminé)| Observations
  --- | ---
