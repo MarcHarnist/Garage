@@ -6,7 +6,7 @@ Just do it !
 	
  To do list | Fait ?
  ---------- | ----------
- Reproduire les classes: Garage, Vehicule, Option | Oui: [Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Garage.java")
+ Reproduire les classes: Garage, Vehicule, Option | Oui [Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !") [Option.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Option.java "Accédez à Option.java")  [GPS.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GPS.java "Accédez à GPS.java") 
  Faire deux implémentations d'option (GPS, Climatisation) du tutoriel OpenClassroom cité au dessus. |
  Ajouter une méthode "calculerValeurStock" dans Garage qui devra cumuler le prix des voitures (avec leurs options) du garage. |
  Ajouter une méthode "getVoituresMoinsCher(int quantite)" dans Garage qui devra retourner les n voitures les moins cher (avec leurs options). |
