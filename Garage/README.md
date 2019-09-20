@@ -23,7 +23,7 @@
  
   EXERCICE 2 | Observations
  ---------- | ----------
- Dans une classe JUnit, instancier deux listes de Vehicule. | En cours de développement...
+ Dans une classe JUnit, instancier deux listes de Vehicule. | En cours de développement... https://github.com/junit-team/junit4/wiki/download-and-install
  Remplir ces deux listes en incorporant des doublons entre les deux listes, en utilisant l'attribut 'immatriculation' de Vehicule. |
  Faire une méthode qui permet de supprimer les doublons de la première liste. |
  Afficher les éléments restants de cette première liste. |
