@@ -1,10 +1,10 @@
 
-	# Just do it !
-	## My todo list :
+	# Just do it ! # 
+	## My todo list : ##
 	
- To do list | C'est fait
+ To do list | Fait ?
  ---------- | ----------
- Reproduire les classes: Garage, Vehicule, Option | .
+ Reproduire les classes: Garage, Vehicule, Option | En cours...
  Faire deux implémentations d'option (GPS, Climatisation) du tutoriel OpenClassroom cité au dessus. |
  Ajouter une méthode "calculerValeurStock" dans Garage qui devra cumuler le prix des voitures (avec leurs options) du garage. |
  Ajouter une méthode "getVoituresMoinsCher(int quantite)" dans Garage qui devra retourner les n voitures les moins cher (avec leurs options). |
