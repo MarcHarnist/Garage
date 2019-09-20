@@ -8,4 +8,4 @@
 /** PROGRAMMATION EN COURS
 * Si la valeur du garage vaut 0: le developpement de l'application n'est pas encore fini.
 */
- - Valeur du garage: 0
+ - Valeur du garage: 163901.75

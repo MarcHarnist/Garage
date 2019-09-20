@@ -17,8 +17,9 @@ public class Garage {
 	String nomFichierDeSauvegardeDuGarage = "Garage.txt"; // Le fichier texte qui va contenir la sauvegarde
 	String contenuDuFichierGarageTxt = "";
 	public int nombreDeVoiture = 0;// Compteur de voitures pour l'affichage final
-	List<String> voitures = new ArrayList<>();// Liste détaillée des voitures créées
-	public int valeurGarage = 0;
+	List<String> voitures = new ArrayList<>();// Liste détaillée des voitures créées en mai 2019 une liste de string!
+	public Double valeurGarage = 0.0;
+	List<Vehicule> listeVehicules = new ArrayList<Vehicule>();// Créée pour Gecko 20/09/19 après formation ENI: liste d'objets!
 	
 	
 	public void add(Vehicule voit) {
@@ -31,11 +32,17 @@ public class Garage {
 		+ (voit.getPrixTotalOptions() + voit.getPrixSansOption())
 		+ " €.";
 		
-		//Ajoute la voiture à la liste des voitures du garage: List<String> voitures
+		// Ajoute la voiture à la liste des voitures du garage: List<String> voitures
 		voitures.add(voiture);
 		
 		// Ajoute 1 au nombre de voitures
 		this.nombreDeVoiture++;
+		
+		// Ajoute la voiture à la liste des véhicules du garage pour calculer la valeur de ce dernier
+		listeVehicules.add(voit);
+		
+		// Mise à jour de la valeur du garage
+		calculerValeurStock();
 	}
 	
 	/**
@@ -130,23 +137,21 @@ public class Garage {
 	
 	// Nouvelle méthode demandée par Julien: calculer la valeur du stock du garage
 	public void calculerValeurStock() {
-		int valeurStock = 0;
+		double valeurStock = 0.0;
+		for(Vehicule vehicule : listeVehicules) {
+			valeurStock += vehicule.getPrixSansOption() + vehicule.getPrixTotalOptions();
+		}
 		setValeurGarage(valeurStock);
 	}
 
 	// Les accesseurs et mutateurs de la valeur du garage
-	public int getValeurGarage() {
+	public Double getValeurGarage() {
 		return valeurGarage;
 	}
 
-	public void setValeurGarage(int valeurGarage) {
-		this.valeurGarage = valeurGarage;
+	public void setValeurGarage(Double double1) {
+		this.valeurGarage = double1;
 	}
-	
-	
-	
-	
-	
 	
 } // Ferme public class Garage 
 
