@@ -8,8 +8,8 @@
  Faire deux implémentations d'option (GPS, Climatisation) |[Climatisation: ligne 95 de Test.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Test.java "Accédez à la classe Test")
  Ajouter une méthode "calculerValeurStock" dans Garage qui devra cumuler le prix des voitures (avec leurs options) du garage. |[Méthode : ligne 144 à 150 de Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à la classe Garage")
  Ajouter une méthode "getVoituresMoinsCher(int quantite)" dans Garage qui devra retourner les n voitures les moins cher (avec leurs options). | [Méthode getVoituresMoinsCher() lignes 169 à 179 de  Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
- Dans une classe GarageTest, faire une méthode main: | En cours de développement...
- créer 5 voitures avec leurs options dans main|
+ Dans une classe GarageTest, faire une méthode main: | [GarageTest avec sa méthode main](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "Accédez à la classe GarageTest")
+ créer 5 voitures avec leurs options dans main| En cours de développement...
  créer un garage et y ajouter les voitures dans main |
  afficher la valeur du stock du garage |
  afficher les 3 voitures les moins cher |
