@@ -6,9 +6,9 @@
 	
  To do list | Fait ?
  ---------- | ----------
- Reproduire les classes: Garage | Oui [Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
- Reproduire les classes: Vehicule | Oui [Vehicule.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Vehicule.java "Accédez à Vehicule.java") 
- Reproduire les classes: Option | Oui [Option.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Option.java "Accédez à Option.java")
+ Reproduire les classes: Garage, Vehicule, Option  | [Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
+ Reproduire les classes: Garage, Vehicule, Option  | [Vehicule.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Vehicule.java "Accédez à Vehicule.java") 
+ Reproduire les classes: Garage, Vehicule, Option  | [Option.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Option.java "Accédez à Option.java")
  Faire deux implémentations d'option (GPS, Climatisation) du tutoriel OpenClassroom cité au dessus. |
  Ajouter une méthode "calculerValeurStock" dans Garage qui devra cumuler le prix des voitures (avec leurs options) du garage. |
  Ajouter une méthode "getVoituresMoinsCher(int quantite)" dans Garage qui devra retourner les n voitures les moins cher (avec leurs options). |
