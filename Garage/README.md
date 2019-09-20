@@ -1,8 +1,8 @@
 
 	# Just do it !
-	# My todo list :
+	## My todo list :
 	
- To do list | Done !
+ To do list | C'est fait
  ---------- | ----------
  Reproduire les classes: Garage, Vehicule, Option | .
  Faire deux implémentations d'option (GPS, Climatisation) du tutoriel OpenClassroom cité au dessus. |
@@ -13,18 +13,11 @@
  créer un garage et y ajouter les voitures dans main |
  afficher la valeur du stock du garage |
  afficher les 3 voitures les moins cher |
----------- | ----------
- EXERCICE 2 | .
+ 
+ EXERCICE 2 |
+ ---------- | ----------
  Supprimer les doublons entre deux listes d'objets. |
  Dans une classe JUnit, instancier deux listes de Vehicule. |
  Remplir ces deux listes en incorporant des doublons entre les deux listes, en utilisant l'attribut 'immatriculation' de Vehicule. |
  Faire une méthode qui permet de supprimer les doublons de la première liste. |
  Afficher les éléments restants de cette première liste. |
-
-
-
-
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
