@@ -4,8 +4,8 @@
  Reproduire les classes: Garage, Vehicule, Option  | [Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
  Reproduire les classes: Garage, Vehicule, Option  | [Vehicule.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Vehicule.java "Accédez à Vehicule.java") 
  Reproduire les classes: Garage, Vehicule, Option  | [Option.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Option.java "Accédez à Option.java")
- Faire deux implémentations d'option (GPS, Climatisation) | [Cf: lignes 88 et 95 de Test.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Test.java "Accédez à la classe Test")
- Faire deux implémentations d'option (GPS, Climatisation) |
+ Faire deux implémentations d'option (GPS, Climatisation) | [GPS: lignes 88 de Test.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Test.java "Accédez à la classe Test")
+ Faire deux implémentations d'option (GPS, Climatisation) |[Climatisation: lignes 95 de Test.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Test.java "Accédez à la classe Test")
  Ajouter une méthode "calculerValeurStock" dans Garage qui devra cumuler le prix des voitures (avec leurs options) du garage. |
  Ajouter une méthode "getVoituresMoinsCher(int quantite)" dans Garage qui devra retourner les n voitures les moins cher (avec leurs options). |
  Dans une classe GarageTest, faire une méthode main: |
