@@ -1,23 +1,25 @@
 	
- To do list | Observations
+ To do list
+ 
+ EXERCICE 1 (TerminÃ©)| Observations
  --- | ---
- Reproduire les classes: Garage, Vehicule, Option  | [Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
- Reproduire les classes: Garage, Vehicule, Option  | [Vehicule.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Vehicule.java "Accédez à Vehicule.java") 
- Reproduire les classes: Garage, Vehicule, Option  | [Option.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Option.java "Accédez à Option.java")
- Faire deux implémentations d'option (GPS, Climatisation) | [GPS: ligne 88 de Test.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Test.java "Accédez à la classe Test")
- Faire deux implémentations d'option (GPS, Climatisation) |[Climatisation: ligne 95 de Test.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Test.java "Accédez à la classe Test")
- Ajouter une méthode "calculerValeurStock" dans Garage qui devra cumuler le prix des voitures (avec leurs options) du garage. |[Méthode : ligne 144 à 150 de Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à la classe Garage")
- Ajouter une méthode "getVoituresMoinsCher(int quantite)" dans Garage qui devra retourner les n voitures les moins cher (avec leurs options). | [Méthode getVoituresMoinsCher() lignes 169 à 179 de  Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
- Dans une classe GarageTest, faire une méthode main: | [GarageTest avec sa méthode main](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "Accédez à la classe GarageTest")
- créer 5 voitures avec leurs options dans main| [ lignes 97 à 117 de la méthode main de GarageTest](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "Accédez à la classe GarageTest")
- créer un garage et y ajouter les voitures dans main | [ lignes 83 et suivantes de la class main de GarageTest](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "Accédez à la classe GarageTest")
- afficher la valeur du stock du garage | [Ligne 80 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
- afficher les 3 voitures les moins cher | [Ligne 85 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
+ Reproduire les classes: Garage, Vehicule, Option  | [Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "AccÃ©dez Ã  Garage.java !")
+ Reproduire les classes: Garage, Vehicule, Option  | [Vehicule.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Vehicule.java "AccÃ©dez Ã  Vehicule.java") 
+ Reproduire les classes: Garage, Vehicule, Option  | [Option.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Option.java "AccÃ©dez Ã  Option.java")
+ Faire deux implÃ©mentations d'option (GPS, Climatisation) | [GPS: ligne 88 de Test.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Test.java "AccÃ©dez Ã  la classe Test")
+ Faire deux implÃ©mentations d'option (GPS, Climatisation) |[Climatisation: ligne 95 de Test.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Test.java "AccÃ©dez Ã  la classe Test")
+ Ajouter une mÃ©thode "calculerValeurStock" dans Garage qui devra cumuler le prix des voitures (avec leurs options) du garage. |[MÃ©thode : ligne 144 Ã  150 de Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "AccÃ©dez Ã  la classe Garage")
+ Ajouter une mÃ©thode "getVoituresMoinsCher(int quantite)" dans Garage qui devra retourner les n voitures les moins cher (avec leurs options). | [MÃ©thode getVoituresMoinsCher() lignes 169 Ã  179 de  Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "AccÃ©dez Ã  Garage.java !")
+ Dans une classe GarageTest, faire une mÃ©thode main: | [GarageTest avec sa mÃ©thode main](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "AccÃ©dez Ã  la classe GarageTest")
+ crÃ©er 5 voitures avec leurs options dans main| [ lignes 97 Ã  117 de la mÃ©thode main de GarageTest](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "AccÃ©dez Ã  la classe GarageTest")
+ crÃ©er un garage et y ajouter les voitures dans main | [ lignes 83 et suivantes de la class main de GarageTest](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "AccÃ©dez Ã  la classe GarageTest")
+ afficher la valeur du stock du garage | [Ligne 80 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "AccÃ©dez Ã  Garage.java !")
+ afficher les 3 voitures les moins cher | [Ligne 85 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "AccÃ©dez Ã  Garage.java !")
  
  EXERCICE 2 | Observations
  ---------- | ----------
- Supprimer les doublons entre deux listes d'objets. | En cours de développement...
+ Supprimer les doublons entre deux listes d'objets. | En cours de dÃ©veloppement...
  Dans une classe JUnit, instancier deux listes de Vehicule. |
  Remplir ces deux listes en incorporant des doublons entre les deux listes, en utilisant l'attribut 'immatriculation' de Vehicule. |
- Faire une méthode qui permet de supprimer les doublons de la première liste. |
- Afficher les éléments restants de cette première liste. |
+ Faire une mÃ©thode qui permet de supprimer les doublons de la premiÃ¨re liste. |
+ Afficher les Ã©lÃ©ments restants de cette premiÃ¨re liste. |
