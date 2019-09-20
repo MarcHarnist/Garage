@@ -18,8 +18,8 @@ public class Garage {
 	String contenuDuFichierGarageTxt = "";
 	public int nombreDeVoiture = 0;// Compteur de voitures pour l'affichage final
 	List<String> voitures = new ArrayList<>();// Liste détaillée des voitures créées en mai 2019 une liste de string!
-	public Double valeurGarage = 0.0;
 	List<Vehicule> listeVehicules = new ArrayList<Vehicule>();// Créée pour Gecko 20/09/19 après formation ENI: liste d'objets!
+	public Double valeurGarage = 0.0;
 	
 	
 	public void add(Vehicule voit) {
@@ -71,12 +71,6 @@ public class Garage {
 					bw.write(line);//on écrit une ligne de la liste dans le fichier
 					bw.newLine();//A la ligne
 				}
-				bw.newLine();
-				bw.write("/** PROGRAMMATION EN COURS");
-				bw.newLine();
-				bw.write("* Si la valeur du garage vaut 0: le developpement de l'application n'est pas encore fini.");
-				bw.newLine();
-				bw.write("*/");
 				bw.newLine();
 				bw.write(" - Valeur du garage: " + this.getValeurGarage());
 				
