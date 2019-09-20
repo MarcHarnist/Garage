@@ -1,8 +1,8 @@
-:bowtie: Just do it !
+Just do it !
 ============
 
 
-## My todo list : ##
+## :bowtie: My todo list : ##
 	
  To do list | Fait ?
  ---------- | ----------
