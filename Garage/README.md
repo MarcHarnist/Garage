@@ -1,5 +1,5 @@
 	
- To do list | Fait ?
+ To do list | Observation
  --- | ---
  Reproduire les classes: Garage, Vehicule, Option  | [Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
  Reproduire les classes: Garage, Vehicule, Option  | [Vehicule.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Vehicule.java "Accédez à Vehicule.java") 
@@ -14,7 +14,7 @@
  afficher la valeur du stock du garage | [Ligne 80 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
  afficher les 3 voitures les moins cher | [Ligne 85 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
  
- EXERCICE 2 | Fait?
+ EXERCICE 2 | Observation
  ---------- | ----------
  Supprimer les doublons entre deux listes d'objets. | En cours de développement...
  Dans une classe JUnit, instancier deux listes de Vehicule. |
