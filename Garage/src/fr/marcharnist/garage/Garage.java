@@ -31,10 +31,10 @@ public class Garage {
 		// Déclare la variable voiture dans la méthode car elle ne sert qu'ici
 		int prixTotalVoiture = (int) (voit.getPrixSansOption() + voit.getPrixTotalOptions());
 		String voiture = " + Voiture " + voit.nomMarque + " : " + voit.getNomDuVehicule() 
-		+ " Moteur " + voit.getMoteurType() + " " + voit.getMoteurCylindre()
+		+ ", immatriculation: " + voit.getImmatriculation() + ", moteur " + voit.getMoteurType() + " " + voit.getMoteurCylindre()
 		+ " (" + voit.getPrixSansOption() + " €) "
 		+ voit.options.toString()
-		+ " d'une valeur totale de "
+		+ ", d'une valeur totale de "
 		+ prixTotalVoiture
 		+ " €.";
 		
@@ -181,9 +181,17 @@ public class Garage {
 	public void setListeVehiculesMoinsChersToString(String listeVehiculesMoinsChers) {
 		this.listeVehiculesMoinsChersToString = listeVehiculesMoinsChers;
 	}
-	
-	
-	
-	
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Garage [nomFichierDeSauvegardeDuGarage=" + nomFichierDeSauvegardeDuGarage
+				+ ", contenuDuFichierGarageTxt=" + contenuDuFichierGarageTxt + ", nombreDeVoiture=" + nombreDeVoiture
+				+ ", voitures=" + voitures + ", listeVehicules=" + listeVehicules + ", valeurGarage=" + valeurGarage
+				+ ", nombreVehiculesMoinsChers=" + nombreVehiculesMoinsChers + ", listeVehiculesMoinsChersToString="
+				+ listeVehiculesMoinsChersToString + "]";
+	}
 } // Ferme public class Garage 
 

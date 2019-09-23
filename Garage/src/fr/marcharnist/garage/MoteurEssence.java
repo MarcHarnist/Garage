@@ -8,7 +8,7 @@ public class MoteurEssence extends Moteur{
 		 * super() : instancie la classe mère Moteur avec le "type essence",
 		 *           ainsi que son cylindré et son prix.
 		 */
-		super(cylindre, prix, TypeMoteur.ESSENCE);
+		super(TypeMoteur.ESSENCE, cylindre, prix);
 		
 	}
 }

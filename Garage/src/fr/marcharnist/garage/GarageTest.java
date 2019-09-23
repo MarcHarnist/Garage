@@ -1,86 +1,17 @@
 package fr.marcharnist.garage;
 /**
+ * TODO
+ * Dans une classe JUnit, instancier deux listes de Vehicule.
  * 
  * @author Marc L. Harnist (Visitez mon site marcharnist.fr)
  * @since 2019-05-17
  * @see https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java
- *
- *	Bienvenue dans le fichier Test du projet.
- *  Ce fichier Test est utilisé pour lancer le programme du projet
- *  Le fichier Garage.txt est créé vide lors du premier lancement du programme Test.java.
- *  Les voitures du garage sont sauvegardées dans ce fichier au second lancement
- *  du programme Test.java
- *  Le fichier Garage.txt est supprimé en lançant le programme GarageDelete.java
- *  Bonne lecture,
- *  Marc
- *  
- *  
- *  
- *  LE PROJET
- *  
- *  Travail pratique (TP) LE GARAGE
- *  
- *  THEME
- *  Mettre en pratique la partie 1 et 2 du cours Java d'Openclassroom
- *   - création de classes;
- *   - héritage;
- *   - packages;
- *   - énumération;
- *   - générique;
- *   - fichiers.
- *   
- *   
- *  BESOINS DU DEMANDEUR
- *  Liste des tâches
- *  1. Créer le projet Java Garage et ses fichiers avec Eclipse
- *  2. Rendre le projet dans une archive Zip
- *  
- *
- *  TACHES DU PROGRAMME
- *  1. Créer un garage,
- *  2. Le sauvegarder dans un fichier,
- *  3. A chaque fois qu'un nouveau véhicule est ajouté dans le garage,
- *     celui-ci se sauvegarde automatiquement dans un fichier.
- *  4. Charger automatiquement le garage lors de son instanciation.
- *
- *	EFFETS VISUELS AU LANCEMENT DU PROGRAMME (CLASSE "TEST")
- *    Au premier lancement de la classe "Test", la console doit afficher:
- *  	Aucune voiture sauvegardée!
- *  	***************************
- *  	* Garage Openclassrooms   *
- *  	***************************
- *  
- *    Au second lancement de la classe "Test", la console doit afficher:
- *     + Voiture RENO: Lagouna Moteur ESSENCE 150 Chevaux (23123.0€) [les options] d'une valeur totale de 24011.75€
- *     ... les 5 autres voitures
- *
- *
- *	INVENTAIRE DES FICHIERS A ECRIRE
- *  Selon le diagramme des classes, il va falloir créer 18 fichiers
- *  1. classe Garage 
- *  2. enum Marque
- *  3. classe abstraite Moteur
- *  4. enum TypeMoteur
- *  5. classe Véhicule lié à l'énumération Marque et enfant de la classe Garage: les données vont dans les deux sens
- *  6. interface Option
- *  7. classe MoteurHybride qui hérite de la classe Moteur
- *  8. classe MoteurDiesel qui hérite de la classe Moteur
- *  9. classe MoteurElectrique qui hérite de la classe Moteur
- *  10.classe MoteurEssence qui hérite de la classe Moteur
- *  11.classe GPS qui implémente l'interface Option
- *  12.classe BarreDeToit qui implémente l'interface Option
- *  13.classe Climatisation qui implémente l'interface Option
- *  14.classe SiegeChauffant qui implémente l'interface Option
- *  15. classe VitreElectrique qui implémente l'interface Option
- *  16.classe Lagouna  qui hérite de la classe Vehicule
- *  17.classe D4 qui hérite de la classe Vehicule
- *  18.classe A300B qui hérite de la classe Vehicule
- *  
  */
 public class GarageTest {
 
 	public static void main(String[] args) {
-		Garage garage = new Garage();   
+		
+		 Garage garage = new Garage();   
 	   	 
 	   	 Vehicule lag1 = new Lagouna();// Les attributs de l'objet sont déclarés dans la classe
 
@@ -88,6 +19,7 @@ public class GarageTest {
 	   	 lag1.addOption(new GPS());
 	   	 lag1.addOption(new SiegeChauffant());
 	   	 lag1.addOption(new VitreElectrique());
+	   	 lag1.addImmatriculation("GG-000-PP");
 	   	 garage.add(lag1);
 	   		 
 	   	 Vehicule A300B_2 = new A300B();
@@ -95,25 +27,27 @@ public class GarageTest {
 	   	 A300B_2.addOption(new Climatisation());
 	   	 A300B_2.addOption(new BarreDeToit());
 	   	 A300B_2.addOption(new SiegeChauffant());
+	   	 lag1.addImmatriculation("GG-001-PP");
 	   	 garage.add(A300B_2);
-	   	 
-	   	 
 	   	 
 	   	 Vehicule d4_1 = new D4();
 	   	 d4_1.setMoteur(new MoteurDiesel("200 Hdi", 25684.80d));
 	   	 d4_1.addOption(new BarreDeToit());
 	   	 d4_1.addOption(new Climatisation());
 	   	 d4_1.addOption(new GPS());
+	   	 lag1.addImmatriculation("GG-002-PP");
 	   	 garage.add(d4_1);   	 
 	   	 
 	   	 Vehicule lag2 = new Lagouna();
 	   	 lag2.setMoteur(new MoteurDiesel("500 Hdi", 456987d));
+	   	 lag1.addImmatriculation("GG-999-PP");
 	   	 garage.add(lag2);
 	   	 
 	   	 Vehicule A300B_1 = new A300B();
 	   	 A300B_1.setMoteur(new MoteurHybride("ESSENCE/Electrique", 12345.95d));
 	   	 A300B_1.addOption(new VitreElectrique());
 	   	 A300B_1.addOption(new BarreDeToit());
+	   	 lag1.addImmatriculation("GG-003-PP");
 	   	 garage.add(A300B_1);
 	   	 
 	   	 Vehicule d4_2 = new D4();
@@ -123,6 +57,7 @@ public class GarageTest {
 	   	 d4_2.addOption(new Climatisation());
 	   	 d4_2.addOption(new GPS());
 	   	 d4_2.addOption(new VitreElectrique());
+	   	 lag1.addImmatriculation("GG-004-PP");
 	   	 garage.add(d4_2);   
 	   	 
 	   	 /**
