@@ -23,7 +23,10 @@
  
   EXERCICE 2 | Observations
  ---------- | ----------
- Dans une classe JUnit, instancier deux listes de Vehicule. | En cours de développement... https://github.com/junit-team/junit4/wiki/download-and-install
+ Dans une classe JUnit, instancier deux listes de Vehicule. | [Lignes 32 et 87](https://github.com/MarcHarnist/Garage/blob/tests/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au code")
  Remplir ces deux listes en incorporant des doublons entre les deux listes, en utilisant l'attribut 'immatriculation' de Vehicule. | [Lignes 87 et suivantes dans GarageTest.java](https://github.com/MarcHarnist/Garage/blob/tests/Garage/src/fr/marcharnist/tests/GarageTest.java "Accès au fichier")
  Faire une méthode qui permet de supprimer les doublons de la première liste. | [Ligne 159 et suivantes de Garage.java](https://github.com/MarcHarnist/Garage/blob/tests/Garage/src/fr/marcharnist/garage/Garage.java "Accéder au fichier")
  Afficher les éléments restants de cette première liste. | [Ligne 136 de GarageTest.java](https://github.com/MarcHarnist/Garage/blob/tests/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au code")
+ 
+ ## Aide ##
+ https://github.com/junit-team/junit4/wiki/download-and-install
