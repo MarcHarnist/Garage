@@ -104,7 +104,7 @@ class GarageTest {
 			 System.out.println(" * " + v.toString());
 		 }
 		 System.out.println(" **/");
-		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERER LISTE //
+		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE //
 		 
 		 // AFFICHAGE PROVISOIRE DE LA SECONDE LISTE //
 		 System.out.println();
@@ -130,7 +130,7 @@ class GarageTest {
 			 System.out.println(" * " + v.toString());
 		 }
 		 System.out.println(" **/");
-		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE //
+		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE APRES SUPPRESSION DU DOUBLON //
 		 
 		// creation du garage
 		Garage garage = new Garage(); 
