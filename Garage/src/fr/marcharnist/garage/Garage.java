@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -185,7 +186,15 @@ public class Garage {
 				System.out.println();
 				
 				//suppression du véhicule de la liste
-				
+				boolean suppresssion = supprimerVehiculeDansUneListe(vehiculeReturned.getImmatriculation(), listeVehicules1);
+				if(suppresssion == true) {
+					System.out.println("Message du fichier Garage.java ligne 190:");
+					System.out.println("Véhicule bien supprimé");
+				}
+				else {
+					System.out.println("Message du fichier Garage.java ligne 194:");
+					System.out.println("Véhicule non supprimé");
+				}
 			}
 			else {
 				System.out.println("Pas de véhicule trouvé.");
@@ -198,18 +207,33 @@ public class Garage {
 	 * @param immatriculation
 	 * @return Vehicule
 	 */
-	public static Vehicule getVehiculeByImmatriculation(String immatriculation, List<Vehicule> listeVehicule) {
+	public static Vehicule getVehiculeByImmatriculation(String immatriculation, List<Vehicule> listeVehicule1) {
 		
 		Vehicule immatriculationRecherchee = null;
-		Boolean exist = false;
 		
-		for(Vehicule v:listeVehicule) {
+		for(Vehicule v:listeVehicule1) {
 			if(v.getImmatriculation() == immatriculation) {
-				exist = true; // exist devient vrai
 				return v; // cas I: un objet est retourné: c'est l'immatriculation recherchée
 			}
 		}
-		return immatriculationRecherchee; // Cas III (peu probable) retourne l'immatriculation dans tous les autres cas imaginables: normalement non!
+		return immatriculationRecherchee; // Cas II (peu probable) retourne l'immatriculation dans tous les autres cas imaginables: normalement non!
+	}
+	
+	/**
+	 * Supprime un véhicule d'une liste en fonction de son immatriculation
+	 * @return bouléen: true si l'élément est bien supprimé de la liste
+	 */
+	public static boolean supprimerVehiculeDansUneListe(String immatriculation, List<Vehicule> listeVéhicules) {
+		boolean bienSupprime = false;
+
+		for (Iterator<Vehicule> iter = listeVéhicules.listIterator(); iter.hasNext(); ) {
+		    Vehicule a = iter.next();
+		    if (immatriculation.contentEquals(a.getImmatriculation())) {
+		        iter.remove(); // suppression de l'élément de la liste
+		        bienSupprime = true; // bienSupprimé devient vrai
+		    }
+		}
+		return bienSupprime;
 	}
 	
 	// Les accesseurs et mutateurs de la valeur du garage
