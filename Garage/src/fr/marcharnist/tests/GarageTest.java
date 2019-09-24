@@ -102,30 +102,31 @@ class GarageTest {
 	   	 Vehicule d4_21 = new D4();
 	   	 d4_21.setMoteur(new MoteurElectrique("100 KW", 1224d));
 	  
-	  // doublon pour tests JUnit
+	   	 /**
+	   	  * creation d'un doublon pour tests JUnit
+	   	  */
 	   	 d4_21.addImmatriculation("GG-005-PP");
 	   	 garage.add(d4_21);
 	   	 listeVehicules2.add(d4_21);
 	   	 
-			 // AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE //
-			 System.out.println();
-			 System.out.println("/** Affichage provisoire de la listeVehicules - GarageTest.java ligne 85 -");
-			 for(Vehicule v : listeVehicules) {
-				 System.out.println(" * " + v.toString());
-			 }
-			 System.out.println(" **/");
-			 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERER LISTE //
-			 
-			 // AFFICHAGE PROVISOIRE DE LA SECONDE LISTE //
-			 System.out.println();
-			 System.out.println("/** Affichage provisoire de la seconde liste de véhicules: \"listeVehicules\" - GarageTest.java ligne 85 -");
-			 for(Vehicule v : listeVehicules2) {
-				 System.out.println(" * " + v.toString());
-			 }
-			 System.out.println(" **/");
-			 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERER LISTE //
-			 
-			 
+		 // AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE //
+		 System.out.println();
+		 System.out.println("/** Affichage provisoire de la listeVehicules - GarageTest.java ligne 85 -");
+		 for(Vehicule v : listeVehicules) {
+			 System.out.println(" * " + v.toString());
+		 }
+		 System.out.println(" **/");
+		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERER LISTE //
+		 
+		 // AFFICHAGE PROVISOIRE DE LA SECONDE LISTE //
+		 System.out.println();
+		 System.out.println("/** Affichage provisoire de la seconde liste de véhicules: \"listeVehiculesé\" - GarageTest.java ligne 123 -");
+		 for(Vehicule v : listeVehicules2) {
+			 System.out.println(" * " + v.toString());
+		 }
+		 System.out.println(" **/");
+		 // FIN AFFICHAGE PROVISOIRE DE LA SECONDE LISTE //
+		 
 	   	 /**
 	   	  *  Enregistre le garage dans le fichier bin/Garage.txt
 	   	  */
