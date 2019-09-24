@@ -193,5 +193,57 @@ public class Garage {
 				+ ", nombreVehiculesMoinsChers=" + nombreVehiculesMoinsChers + ", listeVehiculesMoinsChersToString="
 				+ listeVehiculesMoinsChersToString + "]";
 	}
+
+	/**
+	 * Méthode pour supprimer les doublons entre deux liste
+	 * Achem 2019-09-24
+	 * @param listeVehicules1 première liste de véhicule
+	 * @param listeVehicules2 seconde liste.
+	 */
+	public static void supprimerDoublonsDansDesListes(List<Vehicule> listeVehicules1, List<Vehicule> listeVehicules2) { 
+		
+		//Compare la liste 2 à la liste 1
+		for(Vehicule v : listeVehicules2) {
+			
+			//Véhicule examiné
+			System.out.println("Véhicule examiné: ");
+			System.out.println("Nom: " + v.getNomDuVehicule() + ", immat: " + v.getImmatriculation());
+			
+			// vérifie si l'immatriculation de ce véhicule de la liste 2 existe dans la listeVehicule1
+			Vehicule vehiculeReturned = getVehiculeByImmatriculation(v.getImmatriculation(), listeVehicules1);
+			
+			// affiche dans la console le véhicule retourné par la méthode getVehiculeByImmatriculation s'il n'est pas null
+			System.out.print("vehiculeReturned : " );
+				if(vehiculeReturned != null) {
+					System.out.println();
+					System.out.println(vehiculeReturned);
+					System.out.println("Son immat: " + vehiculeReturned.getImmatriculation());
+					System.out.println();
+			}
+		}
+	}
+	/**
+	 * @author Achem
+	 * @since 2019-09-24
+	 * @param immatriculation
+	 * @return Vehicule
+	 */
+	public static Vehicule getVehiculeByImmatriculation(String immatriculation, List<Vehicule> listeVehicule) {
+		
+		Vehicule immatriculationRecherchee = null;
+		Boolean exist = false;
+		
+		for(Vehicule v:listeVehicule) {
+			if(v.getImmatriculation() == immatriculation) {
+				exist = true; // exist devient vrai
+				return v; // cas I: un objet est retourné: c'est l'immatriculation recherchée
+			}
+		}
+		if(exist == false)
+			// Cas II Affiche un message dans la console
+			System.out.println("Pas d'entrée dans la liste de véhicule avec cette immatriculation");
+		return immatriculationRecherchee; // Cas III (peu probable) retourne l'immatriculation dans tous les autres cas imaginables: normalement non!
+	}
+	
 } // Ferme public class Garage 
 

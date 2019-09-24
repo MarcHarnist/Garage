@@ -29,7 +29,7 @@ class GarageTest {
 		Garage garage = new Garage(); 
 		 
 		// JUnit: creation liste vehicules pour les tests JUnit
-		List<Vehicule> listeVehicules = new ArrayList<>();
+		List<Vehicule> listeVehicules1 = new ArrayList<>();
 	   	 
 	   	Vehicule lag1 = new Lagouna();// Les attributs de l'objet sont déclarés dans la classe
 	   	lag1.setMoteur(new MoteurEssence("150 Chevaux", 10256d));
@@ -38,7 +38,7 @@ class GarageTest {
 	   	lag1.addOption(new VitreElectrique());
 	   	lag1.addImmatriculation("GG-000-PP");
 	   	garage.add(lag1);
-	   	listeVehicules.add(lag1);
+	   	listeVehicules1.add(lag1);
 	   	 	   		 
 	   	 Vehicule A300B_2 = new A300B();
 	   	 A300B_2.setMoteur(new MoteurElectrique("1500 W", 1234d));
@@ -47,7 +47,7 @@ class GarageTest {
 	   	 A300B_2.addOption(new SiegeChauffant());
 	   	 A300B_2.addImmatriculation("GG-001-PP");
 	   	 garage.add(A300B_2);
-	   	 listeVehicules.add(A300B_2);
+	   	 listeVehicules1.add(A300B_2);
 	   	 
 	   	 Vehicule d4_1 = new D4();
 	   	 d4_1.setMoteur(new MoteurDiesel("200 Hdi", 25684.80d));
@@ -56,13 +56,13 @@ class GarageTest {
 	   	 d4_1.addOption(new GPS());
 	   	 d4_1.addImmatriculation("GG-002-PP");
 	   	 garage.add(d4_1);   	 
-	   	 listeVehicules.add(d4_1);
+	   	 listeVehicules1.add(d4_1);
 	   	 
 	   	 Vehicule lag2 = new Lagouna();
 	   	 lag2.setMoteur(new MoteurDiesel("500 Hdi", 456987d));
 	   	 lag2.addImmatriculation("GG-003-PP");
 	   	 garage.add(lag2);
-	   	 listeVehicules.add(lag2);
+	   	 listeVehicules1.add(lag2);
 	   	 
 	   	 Vehicule A300B_1 = new A300B();
 	   	 A300B_1.setMoteur(new MoteurHybride("ESSENCE/Electrique", 12345.95d));
@@ -70,7 +70,7 @@ class GarageTest {
 	   	 A300B_1.addOption(new BarreDeToit());
 	   	 A300B_1.addImmatriculation("GG-004-PP");
 	   	 garage.add(A300B_1);
-	   	 listeVehicules.add(A300B_1);
+	   	 listeVehicules1.add(A300B_1);
 	   	 
 	   	 Vehicule d4_2 = new D4();
 	   	 d4_2.setMoteur(new MoteurElectrique("100 KW", 1224d));
@@ -81,8 +81,7 @@ class GarageTest {
 	   	 d4_2.addOption(new VitreElectrique());
 	   	 d4_2.addImmatriculation("GG-005-PP");
 	   	 garage.add(d4_2);
-	   	 listeVehicules.add(d4_2);
-	   	 
+	   	 listeVehicules1.add(d4_2);
 	   	 
 	   	 // Creation de la liste 2
 		 List<Vehicule> listeVehicules2 = new ArrayList<>();	   	 
@@ -111,8 +110,8 @@ class GarageTest {
 	   	 
 		 // AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE //
 		 System.out.println();
-		 System.out.println("/** Affichage provisoire de la listeVehicules - GarageTest.java ligne 85 -");
-		 for(Vehicule v : listeVehicules) {
+		 System.out.println("/** Affichage provisoire de \"listeVehicules1\" - GarageTest.java ligne 85 -");
+		 for(Vehicule v : listeVehicules1) {
 			 System.out.println(" * " + v.toString());
 		 }
 		 System.out.println(" **/");
@@ -120,12 +119,19 @@ class GarageTest {
 		 
 		 // AFFICHAGE PROVISOIRE DE LA SECONDE LISTE //
 		 System.out.println();
-		 System.out.println("/** Affichage provisoire de la seconde liste de véhicules: \"listeVehiculesé\" - GarageTest.java ligne 123 -");
+		 System.out.println("/** Affichage provisoire de la seconde liste de véhicules: \"listeVehicules2\" - GarageTest.java ligne 123 -");
 		 for(Vehicule v : listeVehicules2) {
 			 System.out.println(" * " + v.toString());
 		 }
 		 System.out.println(" **/");
 		 // FIN AFFICHAGE PROVISOIRE DE LA SECONDE LISTE //
+		 
+		 /**
+		  * Methode de Suppression des doublons
+		  */
+		 System.out.println("****** appel méthode supprimerDoublonsDansDesListes *******");
+		 Garage.supprimerDoublonsDansDesListes(listeVehicules1, listeVehicules2);
+		 System.out.println("***********************************************************");
 		 
 	   	 /**
 	   	  *  Enregistre le garage dans le fichier bin/Garage.txt
