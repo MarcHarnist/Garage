@@ -103,7 +103,7 @@ class GarageTest {
 	   	 d4_21.setMoteur(new MoteurElectrique("100 KW", 1224d));
 	  
 	   	 /**
-	   	  * creation d'un doublon pour tests JUnit
+	   	  * creation d'un doublon d'immatriculation pour tests JUnit
 	   	  */
 	   	 d4_21.addImmatriculation("GG-005-PP");
 	   	 garage.add(d4_21);
@@ -155,18 +155,18 @@ class GarageTest {
 	   	  */
 	   	 else {
 	   		 System.out.println(
-	   				 "\n - " + garage.nombreDeVoiture + " voitures viennent d'être enregistrées dans le garage.\n\n" 
-	   				 + garage.contenuDuFichierGarageTxt
-	   				 + "\n - Le garage est sauvegardé dans le fichier " + garage.nomFichierDeSauvegardeDuGarage
-	   				 + "\n - Il se trouve dans le répertoire \"Garage\" (ou \"Garage\\bin\" selon les PC)"
-	   				 + "\n - Vous pouvez explorer et ouvrir ce fichier pour y trouver les voitures créées."
-	   				 + "\n - Si vous utilisez la console cmd.exe de Windows, tapez Garage.txt et enter pour l'ouvrir"
-	   				 + "\n - Pour tester à nouveau, il faut supprimer le fichier " + garage.nomFichierDeSauvegardeDuGarage 
-	   				 + " et relancer le programme"
-	   				 + "\n - Pour supprimer le fichier texte Garage.txt, vous pouvez lancer le programme GarageDelete.java"
-	   				 + "\n\n Merci pour votre lecture."
-	   				 + "\n Marc L. Harnist"
-	   				 + "\n Visitez mon site: marcharnist.fr");
+			 "\n - " + garage.nombreDeVoiture + " voitures viennent d'être enregistrées dans le garage.\n\n" 
+			 + garage.contenuDuFichierGarageTxt
+			 + "\n - Le garage est sauvegardé dans le fichier " + garage.nomFichierDeSauvegardeDuGarage
+			 + "\n - Il se trouve dans le répertoire \"Garage\" (ou \"Garage\\bin\" selon les PC)"
+			 + "\n - Vous pouvez explorer et ouvrir ce fichier pour y trouver les voitures créées."
+			 + "\n - Si vous utilisez la console cmd.exe de Windows, tapez Garage.txt et enter pour l'ouvrir"
+			 + "\n - Pour tester à nouveau, il faut supprimer le fichier " + garage.nomFichierDeSauvegardeDuGarage 
+			 + " et relancer le programme"
+			 + "\n - Pour supprimer le fichier texte Garage.txt, vous pouvez lancer le programme GarageDelete.java"
+			 + "\n\n Merci pour votre lecture."
+			 + "\n Marc L. Harnist"
+			 + "\n Visitez mon site: marcharnist.fr");
 	   	 }
 	}
 }
