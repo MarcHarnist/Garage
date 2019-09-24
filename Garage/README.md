@@ -1,7 +1,7 @@
 # To do list #
 
 ## Objectif de la branche "Listes" ##
-Créer deux listes comparables de véhicules, pour supprimer les doublons, avant de créer les garges et d'enregistrer le fichier texte garage.txt
+Créer deux listes comparables de véhicules, pour supprimer les doublons, avant de créer les garages et d'enregistrer le fichier texte garage.txt
 
  ## EXERCICE 1 ##
  ### Objectif: Reproduire les classes: Garage, Vehicule, Option et deux implémentations d'option (GPS, Climatisation) du tutoriel OpenClassroom  ###

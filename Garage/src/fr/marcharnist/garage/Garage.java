@@ -80,6 +80,7 @@ public class Garage {
 				bw.newLine();
 				bw.write(" - Valeur du garage: " + this.getValeurGarage());
 				bw.newLine();
+				bw.newLine();
 				bw.write(" - Liste des vehicules les moins chers par prix croissants");
 				bw.newLine();
                 bw.write(getVoituresMoinsCher());				
