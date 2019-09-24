@@ -25,5 +25,5 @@
  ---------- | ----------
  Dans une classe JUnit, instancier deux listes de Vehicule. | En cours de développement... https://github.com/junit-team/junit4/wiki/download-and-install
  Remplir ces deux listes en incorporant des doublons entre les deux listes, en utilisant l'attribut 'immatriculation' de Vehicule. | [Lignes 87 et suivantes dans GarageTest.java](https://github.com/MarcHarnist/Garage/blob/tests/Garage/src/fr/marcharnist/tests/GarageTest.java "Accès au fichier")
- Faire une méthode qui permet de supprimer les doublons de la première liste. |
+ Faire une méthode qui permet de supprimer les doublons de la première liste. | 
  Afficher les éléments restants de cette première liste. |

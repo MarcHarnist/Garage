@@ -206,19 +206,23 @@ public class Garage {
 		for(Vehicule v : listeVehicules2) {
 			
 			//Véhicule examiné
-			System.out.println("Véhicule examiné: ");
-			System.out.println("Nom: " + v.getNomDuVehicule() + ", immat: " + v.getImmatriculation());
+			System.out.println(" *  Véhicule examiné: ");
+			System.out.println("\t Nom: " + v.getNomDuVehicule() + ", immat: " + v.getImmatriculation());
 			
 			// vérifie si l'immatriculation de ce véhicule de la liste 2 existe dans la listeVehicule1
 			Vehicule vehiculeReturned = getVehiculeByImmatriculation(v.getImmatriculation(), listeVehicules1);
 			
 			// affiche dans la console le véhicule retourné par la méthode getVehiculeByImmatriculation s'il n'est pas null
-			System.out.print("vehiculeReturned : " );
-				if(vehiculeReturned != null) {
-					System.out.println();
-					System.out.println(vehiculeReturned);
-					System.out.println("Son immat: " + vehiculeReturned.getImmatriculation());
-					System.out.println();
+			System.out.print("\t vehiculeReturned : " );
+			if(vehiculeReturned != null) {
+				System.out.println("un véhicule trouvé: ");
+				System.out.print("\t ");
+				System.out.println(vehiculeReturned);
+				System.out.println("\t - Ce véhicule doit être supprimé !");
+				System.out.println();
+			}
+			else {
+				System.out.println("Pas de véhicule trouvé.");
 			}
 		}
 	}
@@ -239,9 +243,6 @@ public class Garage {
 				return v; // cas I: un objet est retourné: c'est l'immatriculation recherchée
 			}
 		}
-		if(exist == false)
-			// Cas II Affiche un message dans la console
-			System.out.println("Pas d'entrée dans la liste de véhicule avec cette immatriculation");
 		return immatriculationRecherchee; // Cas III (peu probable) retourne l'immatriculation dans tous les autres cas imaginables: normalement non!
 	}
 	

@@ -129,9 +129,10 @@ class GarageTest {
 		 /**
 		  * Methode de Suppression des doublons
 		  */
-		 System.out.println("****** appel méthode supprimerDoublonsDansDesListes *******");
+		 System.out.println();
+		 System.out.println("/** Appel de la méthode supprimerDoublonsDansDesListes");
 		 Garage.supprimerDoublonsDansDesListes(listeVehicules1, listeVehicules2);
-		 System.out.println("***********************************************************");
+		 System.out.println();
 		 
 	   	 /**
 	   	  *  Enregistre le garage dans le fichier bin/Garage.txt
