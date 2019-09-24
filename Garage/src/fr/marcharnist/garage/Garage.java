@@ -156,44 +156,6 @@ public class Garage {
 		listeVehicules.sort(Comparator.comparing(Vehicule::getPrixTotalVehicule));
 		
 	}
-
-	// Les accesseurs et mutateurs de la valeur du garage
-	public Double getValeurGarage() {
-		return valeurGarage;
-	}
-
-	public void setValeurGarage(Double double1) {
-		this.valeurGarage = double1;
-	}
-
-	public String getVoituresMoinsCher() {
-		trierVehiculesMoinsChers();
-		int i = 0;
-		for(Vehicule vehicule:listeVehicules) {
-			if(i < nombreVehiculesMoinsChers) {
-				this.listeVehiculesMoinsChersToString += "\t " + (i + 1) + ".- " + vehicule.toStringSortByPrice() + "\n";
-				i++;
-			}
-		}
-		return listeVehiculesMoinsChersToString;
-	}
-
-	public void setListeVehiculesMoinsChersToString(String listeVehiculesMoinsChers) {
-		this.listeVehiculesMoinsChersToString = listeVehiculesMoinsChers;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Garage [nomFichierDeSauvegardeDuGarage=" + nomFichierDeSauvegardeDuGarage
-				+ ", contenuDuFichierGarageTxt=" + contenuDuFichierGarageTxt + ", nombreDeVoiture=" + nombreDeVoiture
-				+ ", voitures=" + voitures + ", listeVehicules=" + listeVehicules + ", valeurGarage=" + valeurGarage
-				+ ", nombreVehiculesMoinsChers=" + nombreVehiculesMoinsChers + ", listeVehiculesMoinsChersToString="
-				+ listeVehiculesMoinsChersToString + "]";
-	}
-
 	/**
 	 * Méthode pour supprimer les doublons entre deux liste
 	 * Achem 2019-09-24
@@ -246,5 +208,41 @@ public class Garage {
 		return immatriculationRecherchee; // Cas III (peu probable) retourne l'immatriculation dans tous les autres cas imaginables: normalement non!
 	}
 	
+	// Les accesseurs et mutateurs de la valeur du garage
+	public Double getValeurGarage() {
+		return valeurGarage;
+	}
+
+	public void setValeurGarage(Double double1) {
+		this.valeurGarage = double1;
+	}
+
+	public String getVoituresMoinsCher() {
+		trierVehiculesMoinsChers();
+		int i = 0;
+		for(Vehicule vehicule:listeVehicules) {
+			if(i < nombreVehiculesMoinsChers) {
+				this.listeVehiculesMoinsChersToString += "\t " + (i + 1) + ".- " + vehicule.toStringSortByPrice() + "\n";
+				i++;
+			}
+		}
+		return listeVehiculesMoinsChersToString;
+	}
+
+	public void setListeVehiculesMoinsChersToString(String listeVehiculesMoinsChers) {
+		this.listeVehiculesMoinsChersToString = listeVehiculesMoinsChers;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Garage [nomFichierDeSauvegardeDuGarage=" + nomFichierDeSauvegardeDuGarage
+				+ ", contenuDuFichierGarageTxt=" + contenuDuFichierGarageTxt + ", nombreDeVoiture=" + nombreDeVoiture
+				+ ", voitures=" + voitures + ", listeVehicules=" + listeVehicules + ", valeurGarage=" + valeurGarage
+				+ ", nombreVehiculesMoinsChers=" + nombreVehiculesMoinsChers + ", listeVehiculesMoinsChersToString="
+				+ listeVehiculesMoinsChersToString + "]";
+	}
 } // Ferme public class Garage 
 
