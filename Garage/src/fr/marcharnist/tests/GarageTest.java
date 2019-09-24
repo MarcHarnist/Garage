@@ -132,11 +132,11 @@ class GarageTest {
 		 System.out.println();
 		 System.out.println("/** Appel de la méthode supprimerDoublonsDansDesListes");
 		 Garage.supprimerDoublonsDansDesListes(listeVehicules1, listeVehicules2);
-		 System.out.println();
 		 
 		 // AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE APRES SUPPRESSION DU DOUBLON //
 		 System.out.println();
 		 System.out.println("/** Affichage provisoire de \"listeVehicules1\" après suppression des doublons - GarageTest.java ligne 139 -");
+		 System.out.println(" * ");
 		 for(Vehicule v : listeVehicules1) {
 			 System.out.println(" * " + v.toString());
 		 }
