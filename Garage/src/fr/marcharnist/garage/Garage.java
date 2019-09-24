@@ -183,6 +183,9 @@ public class Garage {
 				System.out.println(vehiculeReturned);
 				System.out.println("\t - Ce véhicule doit être supprimé !");
 				System.out.println();
+				
+				//suppression du véhicule de la liste
+				
 			}
 			else {
 				System.out.println("Pas de véhicule trouvé.");

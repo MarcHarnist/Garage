@@ -25,10 +25,7 @@ class GarageTest {
 	@Test
 	void test() {
 		
-		// creation du garage
-		Garage garage = new Garage(); 
-		 
-		// JUnit: creation liste vehicules pour les tests JUnit
+		// JUnit: creation de listes de vehicules pour les tests JUnit
 		List<Vehicule> listeVehicules1 = new ArrayList<>();
 	   	 
 	   	Vehicule lag1 = new Lagouna();// Les attributs de l'objet sont déclarés dans la classe
@@ -76,12 +73,7 @@ class GarageTest {
 	   	 d4_2.addOption(new VitreElectrique());
 	   	 d4_2.addImmatriculation("GG-005-PP");
 	   	 listeVehicules1.add(d4_2);
-	   	 
-	   	 // creation d'un garage depuis la liste 1
-	   	 for(Vehicule v:listeVehicules1) {
-	   		 garage.add(v);
-	   	 }
-	   	 
+
 	   	 // Creation de la liste 2
 		 List<Vehicule> listeVehicules2 = new ArrayList<>();	   	 
 		 
@@ -97,20 +89,14 @@ class GarageTest {
 	   	 A300B_11.addImmatriculation("GG-007-PP");
 	   	 listeVehicules2.add(A300B_11);
 	   	 
-	   	 Vehicule d4_21 = new D4();
-	   	 d4_21.setMoteur(new MoteurElectrique("100 KW", 1224d));
-	  
 	   	 /**
 	   	  * creation d'un doublon d'immatriculation pour tests JUnit
 	   	  */
+	   	 Vehicule d4_21 = new D4();
+	   	 d4_21.setMoteur(new MoteurElectrique("100 KW", 1224d));
 	   	 d4_21.addImmatriculation("GG-005-PP");
 	   	 listeVehicules2.add(d4_21);
 
-	   	 // ajout de la liste 2 au garage
-	   	 for(Vehicule v:listeVehicules2) {
-	   		 garage.add(v);
-	   	 }
-	   	 
 		 // AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE //
 		 System.out.println();
 		 System.out.println("/** Affichage provisoire de \"listeVehicules1\" - GarageTest.java ligne 85 -");
@@ -144,8 +130,20 @@ class GarageTest {
 			 System.out.println(" * " + v.toString());
 		 }
 		 System.out.println(" **/");
-		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERER LISTE //
+		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE //
 		 
+		// creation du garage
+		Garage garage = new Garage(); 
+			
+	   	 // ajout des véhicules au garage depuis la liste 1
+	   	 for(Vehicule v:listeVehicules1) {
+	   		 garage.add(v);
+	   	 }
+	   	 // ajout de la liste 2 au garage
+	   	 for(Vehicule v:listeVehicules2) {
+	   		 garage.add(v);
+	   	 }
+	   	 	   	 
 	   	 /**
 	   	  *  Enregistre le garage dans le fichier bin/Garage.txt
 	   	  */
