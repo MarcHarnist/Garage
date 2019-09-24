@@ -134,6 +134,15 @@ class GarageTest {
 		 Garage.supprimerDoublonsDansDesListes(listeVehicules1, listeVehicules2);
 		 System.out.println();
 		 
+		 // AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE APRES SUPPRESSION DU DOUBLON //
+		 System.out.println();
+		 System.out.println("/** Affichage provisoire de \"listeVehicules1\" après suppression des doublons - GarageTest.java ligne 139 -");
+		 for(Vehicule v : listeVehicules1) {
+			 System.out.println(" * " + v.toString());
+		 }
+		 System.out.println(" **/");
+		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERER LISTE //
+		 
 	   	 /**
 	   	  *  Enregistre le garage dans le fichier bin/Garage.txt
 	   	  */
