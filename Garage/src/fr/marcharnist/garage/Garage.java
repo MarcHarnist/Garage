@@ -86,7 +86,6 @@ public class Garage {
 				bw.newLine();
                 bw.write(getVoituresMoinsCher());				
 				
-				
 				bw.close();//Fermeture de la mémoire tampon
 				writer.close();//Fermeture du writer
 			}catch(IOException e) {
@@ -156,8 +155,8 @@ public class Garage {
 		
 		// Trie les véhicules de la liste en fonction d'un attribut. Ici: prix total du véhicule
 		listeVehicules.sort(Comparator.comparing(Vehicule::getPrixTotalVehicule));
-		
 	}
+	
 	/**
 	 * Méthode pour supprimer les doublons entre deux liste
 	 * Achem 2019-09-24
