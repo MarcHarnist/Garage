@@ -13,13 +13,13 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
  Reproduire les classes: Garage, Vehicule, Option  | [Option.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Option.java "Accédez à Option.java")
  Ajouter une méthode "calculerValeurStock" dans Garage qui devra cumuler le prix des voitures (avec leurs options) du garage. |[Méthode : ligne 144 à 150 de Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à la classe Garage")
  Ajouter une méthode "getVoituresMoinsCher(int quantite)" dans Garage qui devra retourner les n voitures les moins cher (avec leurs options). | [Méthode getVoituresMoinsCher() ligne 246 de  Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
- Dans une classe GarageTest, faire une méthode main: | [GarageTest avec sa méthode main](Garage/src/fr/marcharnist/tests/GarageTest.java "Accédez à la classe GarageTest")
- Créer 5 voitures avec leurs options dans main| [Méthode main de GarageTest](Garage/src/fr/marcharnist/tests/GarageTest.java "Accédez à la classe GarageTest")
- Créer un garage et y ajouter les voitures dans main | [Méthode main de GarageTest](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTest.java "Accédez à la classe GarageTest")
- Faire deux implémentations d'option (GPS, Climatisation) | [GPS: ligne 33 de GarageTest.java](Garage/src/fr/marcharnist/tests/GarageTest.java "Accédez à la classe GarageTest")
- Faire deux implémentations d'option (GPS, Climatisation) |[Climatisation: ligne 41 de GarageTest.java](Garage/src/fr/marcharnist/tests/GarageTest.java "Accédez à la classe GarageTest")
- afficher la valeur du stock du garage | [Ligne 82 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
- afficher les 3 voitures les moins cher | [Ligne 87 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
+ Dans une classe GarageTest, faire une méthode main: | [GarageTest avec sa méthode main](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "Accédez à la classe GarageTest")
+ Créer 5 voitures avec leurs options dans main| [Méthode main de GarageTest](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "Accédez à la classe GarageTest")
+ Créer un garage et y ajouter les voitures dans main | [Méthode main de GarageTest](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "Accédez à la classe GarageTest")
+ Faire deux implémentations d'option (GPS, Climatisation) | [GPS: ligne 33 de GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "Accédez à la classe GarageTest")
+ Faire deux implémentations d'option (GPS, Climatisation) |[Climatisation: ligne 41 de GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/GarageTest.java "Accédez à la classe GarageTest")
+ Afficher la valeur du stock du garage | [Ligne 82 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
+ Afficher les 3 voitures les moins cher | [Ligne 87 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
  
  ## EXERCICE 2 ##
  ### Objectif:  Supprimer les doublons entre deux listes d'objets. ### 
