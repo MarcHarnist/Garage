@@ -27,7 +27,7 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
   EXERCICE 2 | Observations
  ---------- | ----------
  Dans une classe JUnit, instancier deux listes de Vehicule. | [Lignes 29 et 79 du fichier JUnit GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au code")
- Remplir ces deux listes en incorporant des doublons entre les deux listes, en utilisant l'attribut 'immatriculation' de Vehicule. | [Lignes 87 et suivantes dans GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTest.java "Accès au fichier")
+ Remplir ces deux listes en incorporant des doublons entre les deux listes, en utilisant l'attribut 'immatriculation' de Vehicule. | [Lignes 80 et suivantes dans GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTest.java "Accès au fichier")
  Faire une méthode qui permet de supprimer les doublons de la première liste. | [Ligne 166 et suivantes de Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accéder au fichier")
  Afficher les éléments restants de cette première liste. | [Ligne 127 de GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au code")
  
