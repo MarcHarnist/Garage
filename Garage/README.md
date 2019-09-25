@@ -6,7 +6,7 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
  ## EXERCICE 1 ##
  ### Objectif: Reproduire les classes: Garage, Vehicule, Option et deux implémentations d'option (GPS, Climatisation) du tutoriel OpenClassroom  ###
  
- EXERCICE 1 (Terminé)| Observations
+ EXERCICE 1 (Terminé)| Observations 
  --- | ---
  Reproduire les classes: Garage, Vehicule, Option  | [Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
  Reproduire les classes: Garage, Vehicule, Option  | [Vehicule.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Vehicule.java "Accédez à Vehicule.java") 
