@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -31,10 +32,10 @@ public class Garage {
 		// Déclare la variable voiture dans la méthode car elle ne sert qu'ici
 		int prixTotalVoiture = (int) (voit.getPrixSansOption() + voit.getPrixTotalOptions());
 		String voiture = " + Voiture " + voit.nomMarque + " : " + voit.getNomDuVehicule() 
-		+ " Moteur " + voit.getMoteurType() + " " + voit.getMoteurCylindre()
+		+ ", immatriculation: " + voit.getImmatriculation() + ", moteur " + voit.getMoteurType() + " " + voit.getMoteurCylindre()
 		+ " (" + voit.getPrixSansOption() + " €) "
 		+ voit.options.toString()
-		+ " d'une valeur totale de "
+		+ ", d'une valeur totale de "
 		+ prixTotalVoiture
 		+ " €.";
 		
@@ -80,10 +81,10 @@ public class Garage {
 				bw.newLine();
 				bw.write(" - Valeur du garage: " + this.getValeurGarage());
 				bw.newLine();
+				bw.newLine();
 				bw.write(" - Liste des vehicules les moins chers par prix croissants");
 				bw.newLine();
                 bw.write(getVoituresMoinsCher());				
-				
 				
 				bw.close();//Fermeture de la mémoire tampon
 				writer.close();//Fermeture du writer
@@ -154,9 +155,85 @@ public class Garage {
 		
 		// Trie les véhicules de la liste en fonction d'un attribut. Ici: prix total du véhicule
 		listeVehicules.sort(Comparator.comparing(Vehicule::getPrixTotalVehicule));
-		
 	}
+	
+	/**
+	 * Méthode pour supprimer les doublons entre deux liste
+	 * Achem 2019-09-24
+	 * @param listeVehicules1 première liste de véhicule
+	 * @param listeVehicules2 seconde liste.
+	 */
+	public static void supprimerDoublonsDansDesListes(List<Vehicule> listeVehicules1, List<Vehicule> listeVehicules2) { 
+		
+		//Compare la liste 2 à la liste 1
+		for(Vehicule v : listeVehicules2) {
+			
+			//Véhicule examiné
+			System.out.println(" *  Véhicule examiné: ");
+			System.out.println("\t Nom: " + v.getNomDuVehicule() + ", immat: " + v.getImmatriculation());
+			
+			// vérifie si l'immatriculation de ce véhicule de la liste 2 existe dans la listeVehicule1
+			Vehicule vehiculeReturned = getVehiculeByImmatriculation(v.getImmatriculation(), listeVehicules1);
+			
+			// affiche dans la console le véhicule retourné par la méthode getVehiculeByImmatriculation s'il n'est pas null
+			System.out.print("\t Variable \"vehiculeReturned\" : " );
+			if(vehiculeReturned != null) {
+				System.out.println("un véhicule trouvé: ");
+				System.out.print("\t ");
+				System.out.println(vehiculeReturned);
+				System.out.println("\t - Ce véhicule doit être supprimé !");
+				
+				//suppression du véhicule de la liste
+				boolean suppresssion = supprimerVehiculeDansUneListe(vehiculeReturned.getImmatriculation(), listeVehicules1);
+				if(suppresssion == true) {
+					System.out.println("\tMessage du fichier Garage.java ligne 190:");
+					System.out.println("\t - Véhicule bien supprimé");
+				}
+				else {
+					System.out.println("Message du fichier Garage.java ligne 194:");
+					System.out.println("Véhicule non supprimé");
+				}
+			}
+			else {
+				System.out.println("Pas de véhicule trouvé. Il n'y a pas de doublon");
+			}
+		}
+	}
+	/**
+	 * @author Achem
+	 * @since 2019-09-24
+	 * @param immatriculation
+	 * @return Vehicule
+	 */
+	public static Vehicule getVehiculeByImmatriculation(String immatriculation, List<Vehicule> listeVehicule1) {
+		
+		Vehicule immatriculationRecherchee = null;
+		
+		for(Vehicule v:listeVehicule1) {
+			if(v.getImmatriculation() == immatriculation) {
+				return v; // cas I: un objet est retourné: c'est l'immatriculation recherchée
+			}
+		}
+		return immatriculationRecherchee; // Cas II (peu probable) retourne l'immatriculation dans tous les autres cas imaginables: normalement non!
+	}
+	
+	/**
+	 * Supprime un véhicule d'une liste en fonction de son immatriculation
+	 * @return bouléen: true si l'élément est bien supprimé de la liste
+	 */
+	public static boolean supprimerVehiculeDansUneListe(String immatriculation, List<Vehicule> listeVéhicules) {
+		boolean bienSupprime = false;
 
+		for (Iterator<Vehicule> iter = listeVéhicules.listIterator(); iter.hasNext(); ) {
+		    Vehicule a = iter.next();
+		    if (immatriculation.contentEquals(a.getImmatriculation())) {
+		        iter.remove(); // suppression de l'élément de la liste
+		        bienSupprime = true; // bienSupprimé devient vrai
+		    }
+		}
+		return bienSupprime;
+	}
+	
 	// Les accesseurs et mutateurs de la valeur du garage
 	public Double getValeurGarage() {
 		return valeurGarage;
@@ -181,9 +258,17 @@ public class Garage {
 	public void setListeVehiculesMoinsChersToString(String listeVehiculesMoinsChers) {
 		this.listeVehiculesMoinsChersToString = listeVehiculesMoinsChers;
 	}
-	
-	
-	
-	
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Garage [nomFichierDeSauvegardeDuGarage=" + nomFichierDeSauvegardeDuGarage
+				+ ", contenuDuFichierGarageTxt=" + contenuDuFichierGarageTxt + ", nombreDeVoiture=" + nombreDeVoiture
+				+ ", voitures=" + voitures + ", listeVehicules=" + listeVehicules + ", valeurGarage=" + valeurGarage
+				+ ", nombreVehiculesMoinsChers=" + nombreVehiculesMoinsChers + ", listeVehiculesMoinsChersToString="
+				+ listeVehiculesMoinsChersToString + "]";
+	}
 } // Ferme public class Garage 
 

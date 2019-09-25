@@ -1,5 +1,8 @@
 # To do list #
 
+## Objectif de la branche "Listes" ##
+Créer deux listes comparables de véhicules, pour supprimer les doublons, avant de créer les garages et d'enregistrer le fichier texte garage.txt
+
  ## EXERCICE 1 ##
  ### Objectif: Reproduire les classes: Garage, Vehicule, Option et deux implémentations d'option (GPS, Climatisation) du tutoriel OpenClassroom  ###
  
@@ -23,7 +26,10 @@
  
   EXERCICE 2 | Observations
  ---------- | ----------
- Dans une classe JUnit, instancier deux listes de Vehicule. | En cours de développement... https://github.com/junit-team/junit4/wiki/download-and-install
- Remplir ces deux listes en incorporant des doublons entre les deux listes, en utilisant l'attribut 'immatriculation' de Vehicule. |
- Faire une méthode qui permet de supprimer les doublons de la première liste. |
- Afficher les éléments restants de cette première liste. |
+ Dans une classe JUnit, instancier deux listes de Vehicule. | [Lignes 32 et 87 du fichier JUnit GarageTest.java](https://github.com/MarcHarnist/Garage/blob/listes/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au code")
+ Remplir ces deux listes en incorporant des doublons entre les deux listes, en utilisant l'attribut 'immatriculation' de Vehicule. | [Lignes 87 et suivantes dans GarageTest.java](https://github.com/MarcHarnist/Garage/blob/listes/Garage/src/fr/marcharnist/tests/GarageTest.java "Accès au fichier")
+ Faire une méthode qui permet de supprimer les doublons de la première liste. | [Ligne 221 et suivantes de Garage.java](https://github.com/MarcHarnist/Garage/blob/listes/Garage/src/fr/marcharnist/garage/Garage.java "Accéder au fichier")
+ Afficher les éléments restants de cette première liste. | [Ligne 136 de GarageTest.java](https://github.com/MarcHarnist/Garage/blob/listes/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au code")
+ 
+ ## Aide ##
+ https://github.com/junit-team/junit4/wiki/download-and-install

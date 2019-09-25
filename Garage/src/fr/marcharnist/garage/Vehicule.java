@@ -13,8 +13,8 @@ public class Vehicule extends Garage {
 	private String moteurCylindre;
 	private Double prixTotalOptions = 0.0; // Initialise le prix total du véhicule sans option
 	private Double prixTotalVehicule = 0.0;
-	
-	
+	private String immatriculation;
+		
 	/** Constructeurs simple
 	 * 
 	 */
@@ -77,7 +77,6 @@ public class Vehicule extends Garage {
 		this.prixTotalOptions += prixNouvelleOption;
 	}
 
-
 	/**
 	 * @param nomDuVehicule
 	 */
@@ -90,25 +89,26 @@ public class Vehicule extends Garage {
 	 * @param moteurEssence crée deux attributs: type et cylindrée
 	 */
 	public void setMoteur(MoteurEssence moteurEssence) {
-		this.setMoteurType(moteurEssence.type);
-		this.setMoteurCylindre(moteurEssence.cylindre);
+		this.setMoteurType(moteurEssence.getType());
+		this.setMoteurCylindre(moteurEssence.getCylindre());
+		this.setImmatriculation(getImmatriculation());
 	}
 
 
 	public void setMoteur(MoteurElectrique moteurElectrique) {
-		this.setMoteurType(moteurElectrique.type);
-		this.setMoteurCylindre(moteurElectrique.cylindre);
+		this.setMoteurType(moteurElectrique.getType());
+		this.setMoteurCylindre(moteurElectrique.getCylindre());
 	}
 
 	public void setMoteur(MoteurDiesel moteurDiesel) {
-		this.setMoteurType(moteurDiesel.type);
-		this.setMoteurCylindre(moteurDiesel.cylindre);
+		this.setMoteurType(moteurDiesel.getType());
+		this.setMoteurCylindre(moteurDiesel.getCylindre());
 		
 	}
 
 	public void setMoteur(MoteurHybride moteurHybride) {
-		this.setMoteurType(moteurHybride.type);
-		this.setMoteurCylindre(moteurHybride.cylindre);
+		this.setMoteurType(moteurHybride.getType());
+		this.setMoteurCylindre(moteurHybride.getCylindre());
 	}
 	
 	/**
@@ -157,7 +157,8 @@ public class Vehicule extends Garage {
 	}
 
 	public Double getPrixTotalVehicule() {
-		return this.prixSansOption+this.prixTotalOptions;
+		this.prixTotalVehicule = getPrixSansOption()+getPrixTotalOptions(); 
+		return this.prixTotalVehicule;
 	}
 
 	public void setPrixTotalVehicule(Double prixTotalVehicule) {
@@ -167,7 +168,7 @@ public class Vehicule extends Garage {
 
 	@Override
 	public String toString() {
-		return "Vehicule [nomDuVehicule=" + nomDuVehicule + ", prixSansOption=" + prixSansOption + ", options="
+		return "Vehicule [nomDuVehicule=" + nomDuVehicule + ", immatriculation: " + getImmatriculation() + " prixSansOption=" + prixSansOption + ", options="
 				+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="
 				+ moteurCylindre + ", prixTotalOptions=" + prixTotalOptions + ", prixTotalVehicule=" + getPrixTotalVehicule()
 				+ "]";
@@ -175,15 +176,26 @@ public class Vehicule extends Garage {
 
 	public String toStringSortByPrice() {
 		if(prixTotalOptions == 0) {
-			return "Vehicule " + nomDuVehicule + ", prix total avec options: " + getPrixTotalVehicule() + " (prixSansOption=" + prixSansOption + ", options="
+			return "Vehicule " + nomDuVehicule + ", immatriculation: " + getImmatriculation() + " prix total avec options: " + getPrixTotalVehicule() + " (prixSansOption=" + prixSansOption + ", options="
 					+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="
 					+ moteurCylindre + ", prixTotalOptions= (ce vehicule n'a pas d'options)" 
 					+ ")";		
 		}
-		return "Vehicule " + nomDuVehicule + ", prix total avec options: " + getPrixTotalVehicule() + " (prixSansOption=" + prixSansOption + ", options="
+		return "Vehicule " + nomDuVehicule + ", immatriculation: " + getImmatriculation() + " prix total avec options: " + getPrixTotalVehicule() + " (prixSansOption=" + prixSansOption + ", options="
 				+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="
 				+ moteurCylindre + ", prixTotalOptions=" + prixTotalOptions 
 				+ ")";
 	}
-	
+
+	public String getImmatriculation() {
+		return immatriculation;
+	}
+
+	public void setImmatriculation(String immatriculation) {
+		this.immatriculation = immatriculation;
+	}
+
+	public void addImmatriculation(String immatriculation) {
+		setImmatriculation(immatriculation);
+	}
 }
