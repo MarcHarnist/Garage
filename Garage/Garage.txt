@@ -3,9 +3,9 @@
  + Voiture TROEN : D4, immatriculation: GG-002-PP, moteur DIESEL 200 Hdi (28457.0 €) [BarreDeToit(29.9 €), Climatisation(347.3 €), GPS(113.5 €)], d'une valeur totale de 28947 €.
  + Voiture RENO : Lagouna, immatriculation: GG-003-PP, moteur DIESEL 500 Hdi (23123.0 €) [], d'une valeur totale de 23123 €.
  + Voiture PIGEOT : A300B, immatriculation: GG-004-PP, moteur HYBRIDE ESSENCE/Electrique (28457.0 €) [Vitre électrique(212.35 €), BarreDeToit(29.9 €)], d'une valeur totale de 28699 €.
+ + Voiture TROEN : D4, immatriculation: GG-005-PP, moteur ELECTRIQUE 100 KW (28457.0 €) [], d'une valeur totale de 28457 €.
  + Voiture RENO : Lagouna, immatriculation: GG-006-PP, moteur DIESEL 500 Hdi (23123.0 €) [BarreDeToit(29.9 €), Climatisation(347.3 €)], d'une valeur totale de 23500 €.
  + Voiture PIGEOT : A300B, immatriculation: GG-007-PP, moteur HYBRIDE ESSENCE/Electrique (28457.0 €) [], d'une valeur totale de 28457 €.
- + Voiture TROEN : D4, immatriculation: GG-005-PP, moteur ELECTRIQUE 100 KW (28457.0 €) [], d'une valeur totale de 28457 €.
 
  - Valeur du garage: 214593.0
 
