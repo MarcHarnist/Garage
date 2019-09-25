@@ -94,23 +94,24 @@ class GarageTest {
 	   	  */
 	   	 Vehicule d4_21 = new D4();
 	   	 d4_21.setMoteur(new MoteurElectrique("100 KW", 1224d));
-	   	 d4_21.addImmatriculation("GG-005-PP");
+	   	 d4_21.addImmatriculation("GG-005-PP"); // doublon témoin pour les tests: il devra être supprimé
 	   	 listeVehicules2.add(d4_21);
 
 		 // AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE //
 		 System.out.println();
-		 System.out.println("/** Affichage provisoire de \"listeVehicules1\" - GarageTest.java ligne 85 -");
+		 System.out.println("/** PREMIERE LISTE DE VEHICULES (GarageTest.java ligne 102)");
 		 for(Vehicule v : listeVehicules1) {
-			 System.out.println(" * " + v.toString());
+			 System.out.println(" *  " + v.toString());
 		 }
 		 System.out.println(" **/");
 		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE //
 		 
 		 // AFFICHAGE PROVISOIRE DE LA SECONDE LISTE //
 		 System.out.println();
-		 System.out.println("/** Affichage provisoire de la seconde liste de véhicules: \"listeVehicules2\" - GarageTest.java ligne 123 -");
+		 System.out.println("/** SECONDE LISTE DE VEHICULES (GarageTest.java ligne 111)");
+		 System.out.println(" *  On peut observer la présence d'un doublon: l'immatriculation GG-005-PP");
 		 for(Vehicule v : listeVehicules2) {
-			 System.out.println(" * " + v.toString());
+			 System.out.println(" *  " + v.toString());
 		 }
 		 System.out.println(" **/");
 		 // FIN AFFICHAGE PROVISOIRE DE LA SECONDE LISTE //
@@ -119,15 +120,15 @@ class GarageTest {
 		  * Methode de Suppression des doublons
 		  */
 		 System.out.println();
-		 System.out.println("/** Appel de la méthode supprimerDoublonsDansDesListes");
+		 System.out.println("/** SUPPRESSION DES DOUBLONS");
+		 System.out.println(" *  Appel de la méthode supprimerDoublonsDansDesListes (GarageTest.java ligne 125)");
 		 Garage.supprimerDoublonsDansDesListes(listeVehicules1, listeVehicules2);
 		 
 		 // AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE APRES SUPPRESSION DU DOUBLON //
 		 System.out.println();
-		 System.out.println("/** Affichage provisoire de \"listeVehicules1\" après suppression des doublons - GarageTest.java ligne 139 -");
-		 System.out.println(" * ");
+		 System.out.println("/** PREMIERE LISTE DE VEHICULES APRES SUPPRESSION DES DOUBLONS (GarageTest.java ligne 128)");
 		 for(Vehicule v : listeVehicules1) {
-			 System.out.println(" * " + v.toString());
+			 System.out.println(" *  " + v.toString());
 		 }
 		 System.out.println(" **/");
 		 // FIN AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE APRES SUPPRESSION DU DOUBLON //

@@ -176,19 +176,18 @@ public class Garage {
 			Vehicule vehiculeReturned = getVehiculeByImmatriculation(v.getImmatriculation(), listeVehicules1);
 			
 			// affiche dans la console le véhicule retourné par la méthode getVehiculeByImmatriculation s'il n'est pas null
-			System.out.print("\t vehiculeReturned : " );
+			System.out.print("\t Variable \"vehiculeReturned\" : " );
 			if(vehiculeReturned != null) {
 				System.out.println("un véhicule trouvé: ");
 				System.out.print("\t ");
 				System.out.println(vehiculeReturned);
 				System.out.println("\t - Ce véhicule doit être supprimé !");
-				System.out.println();
 				
 				//suppression du véhicule de la liste
 				boolean suppresssion = supprimerVehiculeDansUneListe(vehiculeReturned.getImmatriculation(), listeVehicules1);
 				if(suppresssion == true) {
-					System.out.println("Message du fichier Garage.java ligne 190:");
-					System.out.println("Véhicule bien supprimé");
+					System.out.println("\tMessage du fichier Garage.java ligne 190:");
+					System.out.println("\t - Véhicule bien supprimé");
 				}
 				else {
 					System.out.println("Message du fichier Garage.java ligne 194:");
@@ -196,7 +195,7 @@ public class Garage {
 				}
 			}
 			else {
-				System.out.println("Pas de véhicule trouvé.");
+				System.out.println("Pas de véhicule trouvé. Il n'y a pas de doublon");
 			}
 		}
 	}
