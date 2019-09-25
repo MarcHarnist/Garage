@@ -22,7 +22,7 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
  afficher les 3 voitures les moins cher | [Ligne 87 de la classe Garage](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accédez à Garage.java !")
  
  ## EXERCICE 2 ##
- ### Objectif:  Supprimer les doublons entre deux listes d'objets. ###
+ ### Objectif:  Supprimer les doublons entre deux listes d'objets. ### 
  
   EXERCICE 2 | Observations
  ---------- | ----------
