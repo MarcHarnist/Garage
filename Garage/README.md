@@ -1,6 +1,6 @@
 # To do list #
 
-## Objectif de la branche "Listes" ##
+## Objectif de la branche "dev" ##
 Créer deux listes comparables de véhicules, pour supprimer les doublons, avant de créer les garages et d'enregistrer le fichier texte garage.txt
 
  ## EXERCICE 1 ##
