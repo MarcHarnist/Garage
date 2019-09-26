@@ -14,6 +14,7 @@ public class Vehicule extends Garage {
 	private Double prixTotalOptions = 0.0; // Initialise le prix total du véhicule sans option
 	private Double prixTotalVehicule = 0.0;
 	private String immatriculation;
+	private boolean doublon = false;
 		
 	/** Constructeurs simple
 	 * 
@@ -197,5 +198,13 @@ public class Vehicule extends Garage {
 
 	public void addImmatriculation(String immatriculation) {
 		setImmatriculation(immatriculation);
+	}
+
+	public boolean getDoublon() {
+		return doublon;
+	}
+
+	public void setDoublon(boolean doublon) {
+		this.doublon = doublon;
 	}
 }

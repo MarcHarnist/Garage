@@ -9,10 +9,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+
+import org.hamcrest.core.IsNull;
 
 
 
@@ -24,9 +27,11 @@ public class Garage {
 	public List<String> voitures = new ArrayList<>();// Liste détaillée des voitures créées en mai 2019 une liste de string!
 	public List<Vehicule> listeVehicules = new ArrayList<Vehicule>();// Créée pour Gecko 20/09/19 après formation ENI: liste d'objets!
 	private Double valeurGarage = 0.0;
+	private String valeurGarageToString = "";
+	private String encartValeurStockGarage = "";
 	private int nombreVehiculesMoinsChers = 3;
 	private String listeVehiculesMoinsChersToString = "";
-	
+	private String titreEncartVehiculesMoinsChers = "";
 	
 	public void add(Vehicule voit) {
 		// Déclare la variable voiture dans la méthode car elle ne sert qu'ici
@@ -79,12 +84,12 @@ public class Garage {
 					bw.newLine();//A la ligne
 				}
 				bw.newLine();
-				bw.write(" - Valeur du garage: " + this.getValeurGarage());
+				bw.write(getEncartValeurStockGarage());
 				bw.newLine();
 				bw.newLine();
-				bw.write(" - Liste des vehicules les moins chers par prix croissants");
+				bw.write(getTitreEncartVehiculesMoinsChers());
 				bw.newLine();
-                bw.write(getVoituresMoinsCher());				
+                bw.write(getListeVehiculesMoinsChersToString());				
 				
 				bw.close();//Fermeture de la mémoire tampon
 				writer.close();//Fermeture du writer
@@ -163,41 +168,33 @@ public class Garage {
 	 * @param listeVehicules1 première liste de véhicule
 	 * @param listeVehicules2 seconde liste.
 	 */
-	public static void supprimerDoublonsDansDesListes(List<Vehicule> listeVehicules1, List<Vehicule> listeVehicules2) { 
+	public static Vehicule supprimerDoublonsDansDesListes(List<Vehicule> listeVehicules1, List<Vehicule> listeVehicules2) { 
+		
+		Vehicule vehiculeReturned = null;
 		
 		//Compare la liste 2 à la liste 1
 		for(Vehicule v : listeVehicules2) {
 			
-			//Véhicule examiné
-			System.out.println(" *  Véhicule examiné: ");
-			System.out.println("\t Nom: " + v.getNomDuVehicule() + ", immat: " + v.getImmatriculation());
-			
 			// vérifie si l'immatriculation de ce véhicule de la liste 2 existe dans la listeVehicule1
-			Vehicule vehiculeReturned = getVehiculeByImmatriculation(v.getImmatriculation(), listeVehicules1);
+			vehiculeReturned = getVehiculeByImmatriculation(v.getImmatriculation(), listeVehicules1);
 			
-			// affiche dans la console le véhicule retourné par la méthode getVehiculeByImmatriculation s'il n'est pas null
-			System.out.print("\t Variable \"vehiculeReturned\" : " );
 			if(vehiculeReturned != null) {
-				System.out.println("un véhicule trouvé: ");
-				System.out.print("\t ");
-				System.out.println(vehiculeReturned);
-				System.out.println("\t - Ce véhicule doit être supprimé !");
 				
 				//suppression du véhicule de la liste
 				boolean suppresssion = supprimerVehiculeDansUneListe(vehiculeReturned.getImmatriculation(), listeVehicules1);
 				if(suppresssion == true) {
-					System.out.println("\tMessage du fichier Garage.java ligne 190:");
-					System.out.println("\t - Véhicule bien supprimé");
+					vehiculeReturned.setDoublon(false);
+					return vehiculeReturned; // on retourne le véhicule trouvé et supprimé
 				}
 				else {
-					System.out.println("Message du fichier Garage.java ligne 194:");
-					System.out.println("Véhicule non supprimé");
+					// la suppression du doublon a échoué
+					vehiculeReturned.setDoublon(true);
+					return vehiculeReturned;
 				}
-			}
-			else {
-				System.out.println("Pas de véhicule trouvé. Il n'y a pas de doublon");
+					
 			}
 		}
+		return vehiculeReturned; // Vaut null. Aucun véhicule trouvé dans la liste
 	}
 	/**
 	 * @author Achem
@@ -211,10 +208,10 @@ public class Garage {
 		
 		for(Vehicule v:listeVehicule1) {
 			if(v.getImmatriculation() == immatriculation) {
-				return v; // cas I: un objet est retourné: c'est l'immatriculation recherchée
+				return v; // cas I: un objet est trouvé dans la liste, il est retourné
 			}
 		}
-		return immatriculationRecherchee; // Cas II (peu probable) retourne l'immatriculation dans tous les autres cas imaginables: normalement non!
+		return immatriculationRecherchee; // Cas II retourne null si aucun véhicule n'a été trouvé
 	}
 	
 	/**
@@ -222,6 +219,7 @@ public class Garage {
 	 * @return bouléen: true si l'élément est bien supprimé de la liste
 	 */
 	public static boolean supprimerVehiculeDansUneListe(String immatriculation, List<Vehicule> listeVéhicules) {
+		
 		boolean bienSupprime = false;
 
 		for (Iterator<Vehicule> iter = listeVéhicules.listIterator(); iter.hasNext(); ) {
@@ -243,20 +241,71 @@ public class Garage {
 		this.valeurGarage = double1;
 	}
 
-	public String getVoituresMoinsCher() {
-		trierVehiculesMoinsChers();
-		int i = 0;
-		for(Vehicule vehicule:listeVehicules) {
-			if(i < nombreVehiculesMoinsChers) {
-				this.listeVehiculesMoinsChersToString += "\t " + (i + 1) + ".- " + vehicule.toStringSortByPrice() + "\n";
-				i++;
-			}
-		}
-		return listeVehiculesMoinsChersToString;
-	}
-
 	public void setListeVehiculesMoinsChersToString(String listeVehiculesMoinsChers) {
 		this.listeVehiculesMoinsChersToString = listeVehiculesMoinsChers;
+	}
+
+	/**
+	 * @return the nomFichierDeSauvegardeDuGarage
+	 */
+	public String getNomFichierDeSauvegardeDuGarage() {
+		return nomFichierDeSauvegardeDuGarage;
+	}
+
+	/**
+	 * @return the contenuDuFichierGarageTxt
+	 */
+	public String getContenuDuFichierGarageTxt() {
+		return contenuDuFichierGarageTxt;
+	}
+
+	/**
+	 * @return the nombreDeVoiture
+	 */
+	public int getNombreDeVoiture() {
+		return nombreDeVoiture;
+	}
+
+	/**
+	 * @return the voitures
+	 */
+	public List<String> getVoitures() {
+		return voitures;
+	}
+
+	/**
+	 * @return the listeVehicules
+	 */
+	public List<Vehicule> getListeVehicules() {
+		return listeVehicules;
+	}
+
+	/**
+	 * @return the listeVehiculesMoinsChersToString
+	 */
+	public String getListeVehiculesMoinsChersToString() {
+		return listeVehiculesMoinsChersToString;
+	}
+	
+	public void addListeVehiculesMoinsChersToString(String string) {
+		this.listeVehiculesMoinsChersToString += string;
+	}
+
+	/**
+	 * @return the nombreVehiculesMoinsChers
+	 */
+	public int getNombreVehiculesMoinsChers() {
+		return nombreVehiculesMoinsChers;
+	}
+
+	/**
+	 * @param nombreVehiculesMoinsChers the nombreVehiculesMoinsChers to set
+	 */
+	public void setNombreVehiculesMoinsChers(int nombreVehiculesMoinsChers) {
+		if(nombreVehiculesMoinsChers>0)
+			this.nombreVehiculesMoinsChers = nombreVehiculesMoinsChers;
+		else
+			this.nombreVehiculesMoinsChers = 1;
 	}
 
 	/* (non-Javadoc)
@@ -269,6 +318,39 @@ public class Garage {
 				+ ", voitures=" + voitures + ", listeVehicules=" + listeVehicules + ", valeurGarage=" + valeurGarage
 				+ ", nombreVehiculesMoinsChers=" + nombreVehiculesMoinsChers + ", listeVehiculesMoinsChersToString="
 				+ listeVehiculesMoinsChersToString + "]";
+	}
+
+	public String getTitreEncartVehiculesMoinsChers() {
+		return titreEncartVehiculesMoinsChers;
+	}
+
+	public void setTitreEncartVehiculesMoinsChers(String titreEncartVehiculesMoinsChers) {
+		this.titreEncartVehiculesMoinsChers = titreEncartVehiculesMoinsChers;
+	}
+
+	public String getEncartValeurStockGarage() {
+		return encartValeurStockGarage;
+	}
+
+	public void setEncartValeurStockGarage(String encartValeurStockGarage) {
+		this.encartValeurStockGarage = encartValeurStockGarage;
+	}
+
+	public String getValeurGarageToString() {
+		
+		valeurGarageToString = Double.toString(valeurGarage);
+        NumberFormat numberFormat = NumberFormat.getInstance(java.util.Locale.FRENCH);
+        
+        valeurGarageToString = numberFormat.format(valeurGarage);
+        /**
+         * Afficher avec le regles du pays
+         */
+        setValeurGarageToString(valeurGarageToString);
+		return valeurGarageToString;
+	}
+
+	public void setValeurGarageToString(String valeurGarageToString) {
+		this.valeurGarageToString = valeurGarageToString;
 	}
 } // Ferme public class Garage 
 

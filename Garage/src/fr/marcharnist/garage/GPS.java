@@ -7,6 +7,10 @@ public class GPS implements Option{
 	
 	public GPS() {
 	}
+
+	public GPS(double prix) {
+		setPrix(prix);
+	}
 	
 	public Double getPrix(){
 		return this.prix;
