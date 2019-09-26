@@ -1,5 +1,8 @@
 # To do list #
 
+## Dernières modifications ##
+Suppression de l'envoie de chaînes de caractères depuis la classe Garage vers la classe GarageTest et suppression des "system.out.println" des classes POJO
+
 ## Objectif de la branche "dev" ##
 Créer deux listes comparables de véhicules, pour supprimer les doublons, avant de créer les garages et d'enregistrer le fichier texte garage.txt
 
