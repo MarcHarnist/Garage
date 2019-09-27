@@ -40,7 +40,7 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
  Corriger | Observations
  ---------- | ----------
  Il faudrait ajouter un argument int pour pouvoir spécifier combien de voitures on veut en retour. | [Paramétrage du nombre de véhicules moins chers à afficher ligne 198 de GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au fichier GarageTest.java")
- Faire en sorte qu'elle renvoie des pojos (les objets) et non pas une String, histoire de bien rester "objet". |  [Suppression des retours de String depuis les classes Garage et Vehicule de GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au fichier GarageTest.java")
+ Faire en sorte qu'elle renvoie des pojos (les objets) et non pas une String, histoire de bien rester "objet". |  [Remplacement des retours de String depuis les classes Garage et Vehicule par des POJO dans GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au fichier GarageTest.java")
 
  ### Dans les tests ###
  
