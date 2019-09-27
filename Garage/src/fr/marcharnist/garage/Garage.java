@@ -17,6 +17,8 @@ import java.util.List;
 
 import org.hamcrest.core.IsNull;
 
+import fr.marcharnist.outils.SeparerMilliers;
+
 
 
 public class Garage {
@@ -338,15 +340,10 @@ public class Garage {
 
 	public String getValeurGarageToString() {
 		
-		valeurGarageToString = Double.toString(valeurGarage);
-        NumberFormat numberFormat = NumberFormat.getInstance(java.util.Locale.FRENCH);
-        
-        valeurGarageToString = numberFormat.format(valeurGarage);
-        /**
-         * Afficher avec le regles du pays
-         */
-        setValeurGarageToString(valeurGarageToString);
-		return valeurGarageToString;
+		//utilise la classe fr.marcharnist.outils/SeparerMilliers
+		String valeurGarageToString = SeparerMilliers.separerMilliers(valeurGarage);
+		
+        return valeurGarageToString;
 	}
 
 	public void setValeurGarageToString(String valeurGarageToString) {

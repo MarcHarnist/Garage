@@ -193,6 +193,8 @@ class GarageTest {
 		 */
 		// Paramétrage du nombre de voitures les moins chères à afficher
 		garage.setNombreVehiculesMoinsChers(3);
+		
+		//declaration variables
 		String message = "";
 		
 		// S'il y a moins de véhicules en stock que le nombre de voitures demandées on affiche un message
