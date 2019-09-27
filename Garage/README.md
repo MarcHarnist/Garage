@@ -3,16 +3,6 @@
 ## Dernières modifications ##
 Suppression de l'envoie de chaînes de caractères depuis la classe Garage vers la classe GarageTest et suppression des "system.out.println" des classes POJO
 
-## Correction ##
-* la méthode getVoituresMoinsCher:
-	* il faudrait ajouter un argument int pour pouvoir spécifier combien de voitures on veut en retour. 
-	* faire en sorte qu'elle renvoie des pojos (les objets) et non pas une String, histoire de bien rester "objet".
-
-Dans les tests, il est primordial d'utiliser les assertions (assertTrue, assertEquals...) pour bien contrôler les valeurs retournées.
-Tu peux aussi utiliser le fail pour faire planter un test si tu sais que le code ne devrait pas passer à cet endroit.
-
-Bien cordialement.
-
 ## Objectif de la branche "dev" ##
 Créer deux listes comparables de véhicules, pour supprimer les doublons, avant de créer les garages et d'enregistrer le fichier texte garage.txt
 
@@ -44,5 +34,25 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
  Faire une méthode qui permet de supprimer les doublons de la première liste. | [Ligne 166 et suivantes de Garage.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/garage/Garage.java "Accéder au fichier")
  Afficher les éléments restants de cette première liste. | [Ligne 127 de GarageTest.java](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTest.java "Accéder au code")
  
+ ## Correction ##
+ ### La méthode getVoituresMoinsCher ###
+
+ Corriger | Observations
+ ---------- | ----------
+ Il faudrait ajouter un argument int pour pouvoir spécifier combien de voitures on veut en retour. | 
+ Faire en sorte qu'elle renvoie des pojos (les objets) et non pas une String, histoire de bien rester "objet". |
+
+ ### Dans les tests ###
+ 
+ Corriger | Observations
+ ---------- | ----------
+ Il est primordial d'utiliser les assertions (assertTrue, assertEquals...) pour bien contrôler les valeurs retournées. |
+ Utiliser le fail pour faire planter un test si tu sais que le code ne devrait pas passer à cet endroit. | 
  ## Aide ##
  https://github.com/junit-team/junit4/wiki/download-and-install
+ 
+ 
+ 
+ 
+ 
+ 
