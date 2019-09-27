@@ -22,6 +22,7 @@ import fr.marcharnist.garage.Vehicule;
 import fr.marcharnist.garage.VitreElectrique;
 import fr.marcharnist.outils.Chapeau;
 import fr.marcharnist.outils.Header;
+import fr.marcharnist.outils.SeparerMilliers;
 
 class GarageTest {
 
@@ -185,11 +186,8 @@ class GarageTest {
 		 * 
 		 */
 		Header.titre("Valeur du garage");
-		garage.setEncartValeurStockGarage(" - Valeur du stock du garage: " + garage.getValeurGarageToString() + " €");
-		System.out.println(garage.getEncartValeurStockGarage());
+		System.out.println(" - Valeur du stock du garage: " + SeparerMilliers.separerMilliers(garage.calculerValeurStock()) + " €");
 		System.out.println();
-		
-		
 		
 		
 		/** LES VOITURES LES MOINS CHERES DU GARAGE
@@ -197,18 +195,14 @@ class GarageTest {
 		 *  des objets qui possèdent un attribut "toStringAvecPrixTotal"
 		 */
 		// Paramétrage du nombre de voitures les moins chères à afficher
-		garage.setNombreVehiculesMoinsChers(1);
-		
-		//declaration variables
-		String message = "";
-		
+		garage.setNombreVehiculesMoinsChers(3);
+		// declaration des variables
+		String message = null;
 		// S'il y a moins de véhicules en stock que le nombre de voitures demandées on affiche un message
 		if(garage.getNombreVehiculesMoinsChers()>garage.nombreDeVoiture) {
-			message = "\n (Note: vous avez demandé les " + garage.getNombreVehiculesMoinsChers() + " voitures les moins"
+			message = "(Note: vous avez demandé les " + garage.getNombreVehiculesMoinsChers() + " voitures les moins"
 					+ " chères du garage, mais il y a seulement " + garage.nombreDeVoiture + " voitures.)";
-			garage.setNombreVehiculesMoinsChers(garage.nombreDeVoiture);
 		}
-
 		String titreEncartVehiculesMoinsChers;
 		// s'il n'y a qu'une voiture: tout est mis au singulier
 		if(garage.getNombreVehiculesMoinsChers() <2) {
@@ -217,17 +211,17 @@ class GarageTest {
 		}
 		// autrement, tout est mis au pluriel
 		else {
-			titreEncartVehiculesMoinsChers = "LES " + garage.getNombreVehiculesMoinsChers() + " VOITURES LES MOINS CHERES DU GARAGE" + message;
+			titreEncartVehiculesMoinsChers = "LES " + garage.getNombreVehiculesMoinsChers() + " VOITURES LES MOINS CHERES DU GARAGE";
 			Header.titre(titreEncartVehiculesMoinsChers);
 		}
-		
 		// trie les voitures de la moins chères à la plus chères
 		garage.trierVehiculesMoinsChers();
-		
+		//affiche le message
+		if(message != null)
+		System.out.println(message);
 		//on crée un compteur pour ne pas dépasser le nombre de voitures moins chères demandées
 		i = 0;
-		
-		// On affiche enfin les voitures les moins chères, de la moins chères à la plus chère
+		// affiche les voitures les moins chères par ordre croissant
 		for(Vehicule vehicule:garage.listeVehicules) {
 			if(i < garage.getNombreVehiculesMoinsChers()) {
 				System.out.println(" " + (i + 1) + " " + vehicule.toString());
@@ -236,20 +230,15 @@ class GarageTest {
 		}
 		
 		
-		
-		
-		
-		
-		
 		/**
 		 * Enregistre le garage dans le fichier bin/Garage.txt
 		 */
 		garage.enregister();
 
 		System.out.println();
-		System.out.println("*********************************************");
-		System.out.println("*           GARAGE OPENCLASSROOMS           *");
-		System.out.println("*********************************************");
+		System.out.println(" *********************************************");
+		System.out.println(" *           GARAGE OPENCLASSROOMS           *");
+		System.out.println(" *********************************************");
 
 		garage.lireGarageTxt();
 

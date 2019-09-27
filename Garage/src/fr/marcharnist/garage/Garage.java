@@ -33,8 +33,6 @@ public class Garage {
 	public int nombreDeVoiture = 0;// Compteur de voitures pour l'affichage final
 	private int nombreVehiculesMoinsChers = 3;
 	private Double valeurGarage = 0.0;
-	private String encartValeurStockGarage = "";
-
 	
 	public void add(Vehicule voit) {
 		// Déclare la variable voiture dans la méthode car elle ne sert qu'ici
@@ -150,12 +148,13 @@ public class Garage {
 	
 	
 	// Nouvelle méthode demandée par Julien: calculer la valeur du stock du garage
-	public void calculerValeurStock() {
+	public Double calculerValeurStock() {
 		double valeurStock = 0.0;
 		for(Vehicule vehicule : listeVehicules) {
 			valeurStock += vehicule.getPrixTotalVehicule();
 		}
 		setValeurGarage(valeurStock);
+		return valeurStock;
 	}
 	
 	// Tri n voitures les moins chères avec leurs options
@@ -341,21 +340,15 @@ public class Garage {
 		if(this.getNombreVehiculesMoinsChers()>this.nombreDeVoiture) {
 			message = "\n (Note: vous avez demandé les " + this.getNombreVehiculesMoinsChers() + " voitures les moins"
 					+ " chères du garage, mais il y a seulement " + this.nombreDeVoiture + " voitures.)";
-			this.setNombreVehiculesMoinsChers(this.nombreDeVoiture);
 		}
-		String titreEncartVehiculesMoinsChers;
 		// s'il n'y a qu'une voiture: tout est mis au singulier
 		if(this.getNombreVehiculesMoinsChers() <2) {
-			titreEncartVehiculesMoinsChers = "LA VOITURE LA MOINS CHERE DU GARAGE";
-			//Header.titre(titreEncartVehiculesMoinsChers);
+			this.titreEncartVehiculesMoinsChers = "LA VOITURE LA MOINS CHERE DU GARAGE";
 		}
 		// autrement, tout est mis au pluriel
 		else {
 			this.titreEncartVehiculesMoinsChers = "LES " + this.getNombreVehiculesMoinsChers() + " VOITURES LES MOINS CHERES DU GARAGE" + message;
-			Header.titre(this.titreEncartVehiculesMoinsChers);
 		}
-		this.setTitreEncartVehiculesMoinsChers(this.titreEncartVehiculesMoinsChers);
-		
 		return this.titreEncartVehiculesMoinsChers;
 	}
 
@@ -364,11 +357,8 @@ public class Garage {
 	}
 
 	public String getEncartValeurStockGarage() {
-		return encartValeurStockGarage;
-	}
-
-	public void setEncartValeurStockGarage(String encartValeurStockGarage) {
-		this.encartValeurStockGarage = encartValeurStockGarage;
+		String encart = " - Valeur du stock du garage: " + this.getValeurGarageToString() + " €";
+		return encart;
 	}
 
 	public String getValeurGarageToString() {
