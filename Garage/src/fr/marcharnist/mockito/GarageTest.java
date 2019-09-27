@@ -3,9 +3,6 @@ package fr.marcharnist.mockito;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-
 import fr.marcharnist.garage.A300B;
 import fr.marcharnist.garage.BarreDeToit;
 import fr.marcharnist.garage.Climatisation;

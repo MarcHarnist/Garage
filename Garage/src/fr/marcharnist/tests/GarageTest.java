@@ -1,6 +1,5 @@
 package fr.marcharnist.tests;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +19,6 @@ import fr.marcharnist.garage.MoteurHybride;
 import fr.marcharnist.garage.SiegeChauffant;
 import fr.marcharnist.garage.Vehicule;
 import fr.marcharnist.garage.VitreElectrique;
-import fr.marcharnist.outils.Chapeau;
 import fr.marcharnist.outils.Header;
 import fr.marcharnist.outils.SeparerMilliers;
 
@@ -133,7 +131,7 @@ class GarageTest {
 		Vehicule vehiculeDoublon;
 
 		//parcourt toute la liste 2 en appelant la fonction "supprimer doublons dans des listes"
-		for(Vehicule vv : listeVehicules2){
+		for(i = 0; i<listeVehicules2.size(); i++){
 			numberOfVehiculeChecked++;
 			vehiculeDoublon = Garage.supprimerDoublonsDansDesListes(listeVehicules1, listeVehicules2);
 			System.out.println();
@@ -218,8 +216,7 @@ class GarageTest {
 		garage.trierVehiculesMoinsChers();
 		//affiche le message
 		if(message != null)
-		System.out.println(message);
-		//on crée un compteur pour ne pas dépasser le nombre de voitures moins chères demandées
+			System.out.println(message);
 		i = 0;
 		// affiche les voitures les moins chères par ordre croissant
 		for(Vehicule vehicule:garage.listeVehicules) {

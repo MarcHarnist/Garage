@@ -14,10 +14,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-import fr.marcharnist.outils.Header;
 import fr.marcharnist.outils.SeparerMilliers;
-
-
 
 public class Garage {
 	
@@ -193,7 +190,6 @@ public class Garage {
 					vehiculeReturned.setDoublon(true);
 					return vehiculeReturned;
 				}
-					
 			}
 		}
 		return vehiculeReturned; // Vaut null. Aucun véhicule trouvé dans la liste

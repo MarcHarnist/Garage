@@ -46,7 +46,7 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
  
  Corriger | Observations
  ---------- | ----------
- Il est primordial d'utiliser les assertions (assertTrue, assertEquals...) pour bien contrôler les valeurs retournées. |
+ Il est primordial d'utiliser les assertions (assertTrue, assertEquals...) pour bien contrôler les valeurs retournées. | En cours d'étude
  Utiliser le fail pour faire planter un test si on sait que le code ne devrait pas passer à cet endroit. | 
  
  ### Idées de tests ###
