@@ -9,14 +9,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-import org.hamcrest.core.IsNull;
-
+import fr.marcharnist.outils.Header;
 import fr.marcharnist.outils.SeparerMilliers;
 
 
@@ -25,15 +23,18 @@ public class Garage {
 	
 	public String nomFichierDeSauvegardeDuGarage = "Garage.txt"; // Le fichier texte qui va contenir la sauvegarde
 	public String contenuDuFichierGarageTxt = "";
-	public int nombreDeVoiture = 0;// Compteur de voitures pour l'affichage final
+	
 	public List<String> voitures = new ArrayList<>();// Liste détaillée des voitures créées en mai 2019 une liste de string!
 	public List<Vehicule> listeVehicules = new ArrayList<Vehicule>();// Créée pour Gecko 20/09/19 après formation ENI: liste d'objets!
-	private Double valeurGarage = 0.0;
-	private String valeurGarageToString = "";
-	private String encartValeurStockGarage = "";
-	private int nombreVehiculesMoinsChers = 3;
-	private String listeVehiculesMoinsChersToString = "";
+
 	private String titreEncartVehiculesMoinsChers = "";
+	private String listeVehiculesMoinsChersToString = "";
+	
+	public int nombreDeVoiture = 0;// Compteur de voitures pour l'affichage final
+	private int nombreVehiculesMoinsChers = 3;
+	private Double valeurGarage = 0.0;
+	private String encartValeurStockGarage = "";
+
 	
 	public void add(Vehicule voit) {
 		// Déclare la variable voiture dans la méthode car elle ne sert qu'ici
@@ -286,6 +287,15 @@ public class Garage {
 	 * @return the listeVehiculesMoinsChersToString
 	 */
 	public String getListeVehiculesMoinsChersToString() {
+		
+		//on crée un compteur pour ne pas dépasser le nombre de voitures moins chères demandées
+		int i = 0;
+		for(Vehicule vehicule:listeVehicules) {
+			if(i < getNombreVehiculesMoinsChers()) {
+				addListeVehiculesMoinsChersToString(" " + (i + 1) + " " + vehicule.toString() + "\n");
+				i++;
+			}
+		}
 		return listeVehiculesMoinsChersToString;
 	}
 	
@@ -323,7 +333,30 @@ public class Garage {
 	}
 
 	public String getTitreEncartVehiculesMoinsChers() {
-		return titreEncartVehiculesMoinsChers;
+		
+		//declaration variables
+		String message = "";
+		
+		// S'il y a moins de véhicules en stock que le nombre de voitures demandées on affiche un message
+		if(this.getNombreVehiculesMoinsChers()>this.nombreDeVoiture) {
+			message = "\n (Note: vous avez demandé les " + this.getNombreVehiculesMoinsChers() + " voitures les moins"
+					+ " chères du garage, mais il y a seulement " + this.nombreDeVoiture + " voitures.)";
+			this.setNombreVehiculesMoinsChers(this.nombreDeVoiture);
+		}
+		String titreEncartVehiculesMoinsChers;
+		// s'il n'y a qu'une voiture: tout est mis au singulier
+		if(this.getNombreVehiculesMoinsChers() <2) {
+			titreEncartVehiculesMoinsChers = "LA VOITURE LA MOINS CHERE DU GARAGE";
+			//Header.titre(titreEncartVehiculesMoinsChers);
+		}
+		// autrement, tout est mis au pluriel
+		else {
+			this.titreEncartVehiculesMoinsChers = "LES " + this.getNombreVehiculesMoinsChers() + " VOITURES LES MOINS CHERES DU GARAGE" + message;
+			Header.titre(this.titreEncartVehiculesMoinsChers);
+		}
+		this.setTitreEncartVehiculesMoinsChers(this.titreEncartVehiculesMoinsChers);
+		
+		return this.titreEncartVehiculesMoinsChers;
 	}
 
 	public void setTitreEncartVehiculesMoinsChers(String titreEncartVehiculesMoinsChers) {
@@ -347,7 +380,6 @@ public class Garage {
 	}
 
 	public void setValeurGarageToString(String valeurGarageToString) {
-		this.valeurGarageToString = valeurGarageToString;
 	}
 } // Ferme public class Garage 
 

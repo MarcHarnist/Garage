@@ -189,10 +189,15 @@ class GarageTest {
 		System.out.println(garage.getEncartValeurStockGarage());
 		System.out.println();
 		
+		
+		
+		
 		/** LES VOITURES LES MOINS CHERES DU GARAGE
+		 *  Thème: ne pas récupérer des chaînes de caractères mes des POJO, 
+		 *  des objets qui possèdent un attribut "toStringAvecPrixTotal"
 		 */
 		// Paramétrage du nombre de voitures les moins chères à afficher
-		garage.setNombreVehiculesMoinsChers(3);
+		garage.setNombreVehiculesMoinsChers(1);
 		
 		//declaration variables
 		String message = "";
@@ -215,7 +220,6 @@ class GarageTest {
 			titreEncartVehiculesMoinsChers = "LES " + garage.getNombreVehiculesMoinsChers() + " VOITURES LES MOINS CHERES DU GARAGE" + message;
 			Header.titre(titreEncartVehiculesMoinsChers);
 		}
-		garage.setTitreEncartVehiculesMoinsChers(titreEncartVehiculesMoinsChers);
 		
 		// trie les voitures de la moins chères à la plus chères
 		garage.trierVehiculesMoinsChers();
@@ -223,16 +227,19 @@ class GarageTest {
 		//on crée un compteur pour ne pas dépasser le nombre de voitures moins chères demandées
 		i = 0;
 		
-		//enregistre les véhicules demandés dans une chaîne de caractères qui est un attribut de Garage
+		// On affiche enfin les voitures les moins chères, de la moins chères à la plus chère
 		for(Vehicule vehicule:garage.listeVehicules) {
 			if(i < garage.getNombreVehiculesMoinsChers()) {
-				garage.addListeVehiculesMoinsChersToString(" " + (i + 1) + " " + vehicule.toStringSortByPrice() + "\n");
+				System.out.println(" " + (i + 1) + " " + vehicule.toString());
 				i++;
 			}
 		}
 		
-		// On affiche enfin les voitures les moins chères, de la moins chères à la plus chère
-		System.out.println(garage.getListeVehiculesMoinsChersToString());
+		
+		
+		
+		
+		
 		
 		/**
 		 * Enregistre le garage dans le fichier bin/Garage.txt

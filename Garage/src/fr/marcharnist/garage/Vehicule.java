@@ -167,15 +167,15 @@ public class Vehicule extends Garage {
 		
 	}
 
-	@Override
-	public String toString() {
-		return "Vehicule [nomDuVehicule=" + nomDuVehicule + ", immatriculation: " + getImmatriculation() + " prixSansOption=" + prixSansOption + ", options="
-				+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="
-				+ moteurCylindre + ", prixTotalOptions=" + prixTotalOptions + ", prixTotalVehicule=" + getPrixTotalVehicule()
-				+ "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Vehicule [nomDuVehicule=" + nomDuVehicule + ", immatriculation: " + getImmatriculation() + " prixSansOption=" + prixSansOption + ", options="
+//				+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="
+//				+ moteurCylindre + ", prixTotalOptions=" + prixTotalOptions + ", prixTotalVehicule=" + getPrixTotalVehicule()
+//				+ "]";
+//	}
 
-	public String toStringSortByPrice() {
+	public String toString() {
 		if(prixTotalOptions == 0) {
 			return "Vehicule " + nomDuVehicule + ", immatriculation: " + getImmatriculation() + " prix total avec options: " + getPrixTotalVehicule() + " (prixSansOption=" + prixSansOption + ", options="
 					+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="

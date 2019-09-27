@@ -39,7 +39,7 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
 
  Corriger | Observations
  ---------- | ----------
- Il faudrait ajouter un argument int pour pouvoir spécifier combien de voitures on veut en retour. | 
+ Il faudrait ajouter un argument int pour pouvoir spécifier combien de voitures on veut en retour. | en cours de développement le 27 sept 2019
  Faire en sorte qu'elle renvoie des pojos (les objets) et non pas une String, histoire de bien rester "objet". |
 
  ### Dans les tests ###
@@ -47,7 +47,7 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
  Corriger | Observations
  ---------- | ----------
  Il est primordial d'utiliser les assertions (assertTrue, assertEquals...) pour bien contrôler les valeurs retournées. |
- Utiliser le fail pour faire planter un test si tu sais que le code ne devrait pas passer à cet endroit. | 
+ Utiliser le fail pour faire planter un test si on sait que le code ne devrait pas passer à cet endroit. | 
  ## Aide ##
  https://github.com/junit-team/junit4/wiki/download-and-install
  
