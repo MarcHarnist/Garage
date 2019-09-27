@@ -1,5 +1,9 @@
 # To do list #
 
+## Travaux en cours ##
+Etude sur "utiliser les assertions (assertTrue, assertEquals...) pour bien contrôler les valeurs retournées."
+Voir dernier tableau ci-dessous.
+
 ## Dernières modifications ##
 Suppression de l'envoie de chaînes de caractères depuis la classe Garage vers la classe GarageTest et suppression des "system.out.println" des classes POJO
 
