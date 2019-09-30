@@ -15,6 +15,8 @@ public class Vehicule extends Garage {
 	private Double prixTotalVehicule = 0.0;
 	private String immatriculation;
 	private boolean doublon = false;
+	public static final int NOMBRE_OPTION = 5;
+	private Integer nombreOptionDeCeVehicule = 0;
 		
 	/** Constructeurs simple
 	 * 
@@ -145,6 +147,7 @@ public class Vehicule extends Garage {
 	 * @param nouvelleOption
 	 */
 	public void addOption(Option nouvelleOption) {
+		addNombreOptionAceVehicule(1);
 		String newLine = nouvelleOption.getName() + "(" + nouvelleOption.getPrix() + " €)";
 		this.addPrixTotalOptions(nouvelleOption.getPrix());
 		this.options.add(newLine);		
@@ -167,14 +170,7 @@ public class Vehicule extends Garage {
 		
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Vehicule [nomDuVehicule=" + nomDuVehicule + ", immatriculation: " + getImmatriculation() + " prixSansOption=" + prixSansOption + ", options="
-//				+ options + ", nomMarque=" + nomMarque + ", moteurType=" + moteurType + ", moteurCylindre="
-//				+ moteurCylindre + ", prixTotalOptions=" + prixTotalOptions + ", prixTotalVehicule=" + getPrixTotalVehicule()
-//				+ "]";
-//	}
-
+	@Override
 	public String toString() {
 		if(prixTotalOptions == 0) {
 			return "Vehicule " + nomDuVehicule + ", immatriculation: " + getImmatriculation() + " prix total avec options: " + getPrixTotalVehicule() + " (prixSansOption=" + prixSansOption + ", options="
@@ -206,5 +202,16 @@ public class Vehicule extends Garage {
 
 	public void setDoublon(boolean doublon) {
 		this.doublon = doublon;
+	}
+
+	public Integer getNombreOptionDeCeVehicule() {
+		return nombreOptionDeCeVehicule;
+	}
+
+	public void setNombreOptionDeCeVehicule(Integer n) {
+		this.nombreOptionDeCeVehicule = n;
+	}
+	public void addNombreOptionAceVehicule(Integer n) {
+		this.nombreOptionDeCeVehicule = this.nombreOptionDeCeVehicule + n;
 	}
 }
