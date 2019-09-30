@@ -75,9 +75,13 @@ class GarageTest {
 		d4_2.addOption(new VitreElectrique());
 		d4_2.addImmatriculation("GG-005-PP");
 		listeVehicules1.add(d4_2);
+		
+		// Enregistre la longueur de la liste 1
+		Integer longueurListeVehicule1 = listeVehicules1.size();
 
 		// Creation de la liste 2
 		List<Vehicule> listeVehicules2 = new ArrayList<>();
+		Integer longueurListeVehicule2 = listeVehicules2.size();
 		
 		/** creation d'un doublon d'immatriculation pour tests JUnit *************/
 		Vehicule d4_21 = new D4();
@@ -111,7 +115,7 @@ class GarageTest {
 		System.out.println();
 		Header.titre("SECONDE LISTE DE VEHICULES (GarageTest.java ligne 111)");
 		System.out.println(
-				" (On peut observer la présence d'un doublon avec la liste 1: l'immatriculation GG-005-PP)");
+				" (On peut observer la présence de deux doublons avec la liste 1: l'immatriculation GG-005-PP)");
 		i = 1;
 		for (Vehicule v : listeVehicules2) {
 			System.out.println(" " + i + " " + v.toString());
@@ -146,10 +150,14 @@ class GarageTest {
 					System.out.println(" Suppression du doublon " + vehiculeDoublon.getImmatriculation() + " réussie.");
 			}
 		}
-			
+		// Calcule combien de doublons ont été supprimés
+		Integer longueurListeVehicule1Nettoyee = listeVehicules1.size();	
+		
 		// AFFICHAGE PROVISOIRE DE LA PREMIERE LISTE APRES SUPPRESSION DU DOUBLON //
 		System.out.println();
 		Header.titre("PREMIERE LISTE DE VEHICULES APRES SUPPRESSION DES DOUBLONS (GarageTest.java ligne 128)");
+		System.out.print(" * " + (longueurListeVehicule1-longueurListeVehicule1Nettoyee) + " véhicules en doublons ont été supprimés.");
+		System.out.println(" Il reste " + longueurListeVehicule1Nettoyee + " véhicules à enregistrer dans le garage.");
 		i = 1;
 		for (Vehicule v : listeVehicules1) {
 			System.out.println(" " + i + " " + v.toString());
