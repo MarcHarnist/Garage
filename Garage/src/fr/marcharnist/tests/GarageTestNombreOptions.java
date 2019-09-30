@@ -77,26 +77,17 @@ class GarageTestNombreOptions {
 		d4_2.addImmatriculation("GG-005-PP");
 		listeVehicules1.add(d4_2);
 		
+		/** Un véhicule avec trop d'options
+		 *  Passera-t-il le test JUnit?
+		 */
 		Vehicule dx = new D4();
 		dx.setMoteur(new MoteurDiesel("100 KW", 9000.0));
 		dx.addOption(new BarreDeToit());
 		dx.addOption(new BarreDeToit());
-		dx.addOption(new BarreDeToit());
-		dx.addOption(new BarreDeToit());
-		dx.addOption(new Climatisation());
-		dx.addOption(new Climatisation());
-		dx.addOption(new Climatisation());
-		dx.addOption(new Climatisation());
 		dx.addOption(new Climatisation());
 		dx.addOption(new Climatisation());
 		dx.addOption(new GPS());
 		dx.addOption(new GPS());
-		dx.addOption(new GPS());
-		dx.addOption(new GPS());
-		dx.addOption(new GPS());
-		dx.addOption(new SiegeChauffant());
-		dx.addOption(new SiegeChauffant());
-		dx.addOption(new SiegeChauffant());
 		dx.addOption(new SiegeChauffant());
 		dx.setPrixTotalVehicule(100000.0);
 		System.out.println("Vehicule.NOMBRE_OPTION : ");
@@ -107,8 +98,9 @@ class GarageTestNombreOptions {
 		/**
 		 * Test unitaire
 		 */ 
-		if (dx.getNombreOptionDeCeVehicule()>5) {
-			fail("Erreur dans ce véhicule. Il n'y a pas autant d'options disponibles.");
+		if (dx.getNombreOptionDeCeVehicule()>Vehicule.NOMBRE_OPTION) {
+			fail("Erreur dans ce véhicule. Il n'y a pas autant d'options disponibles."
+					+ " Il n'y a que " + Vehicule.NOMBRE_OPTION + " options disponibles pour ce véhicule.");
 	    }
 		
 		// Enregistre la longueur de la liste 1

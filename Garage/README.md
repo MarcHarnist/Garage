@@ -51,14 +51,7 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
  Corriger | Observations
  ---------- | ----------
  Il est primordial d'utiliser les assertions (assertTrue, assertEquals...) pour bien contrôler les valeurs retournées. | [GarageTestDoublons ligne 143: un test unitaire avec assertEquals()](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTestDoublons.java "Voir le code")
- Utiliser le fail pour faire planter un test si on sait que le code ne devrait pas passer à cet endroit. | [GarageTestNombreOptions test unitaire ligne 110 (fail) Il y a trop d'options pour le véhicule dx. Le fichier unitaire JUnit plante et affiche un message d'erreur.](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTestNombreOptions.java "Accéder au fichier en question")
- 
- ### Idées de tests ###
- 
- Idée de Marc | Observations
- ---------- | ----------
- getNombreVehiculesMoinsChers() doit être < 10000 | 
- 
+ Utiliser le fail pour faire planter un test si on sait que le code ne devrait pas passer à cet endroit. | [GarageTestNombreOptions test unitaire ligne 100 (fail) Il y a trop d'options pour le véhicule dx. Le fichier unitaire JUnit plante et affiche un message d'erreur.](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTestNombreOptions.java "Accéder au fichier en question")
  
  ## Aide ##
  https://github.com/junit-team/junit4/wiki/download-and-install
