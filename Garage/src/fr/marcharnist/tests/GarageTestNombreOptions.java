@@ -24,7 +24,7 @@ import fr.marcharnist.garage.VitreElectrique;
 import fr.marcharnist.outils.Header;
 import fr.marcharnist.outils.SeparerMilliers;
 
-class GarageTestPrix {
+class GarageTestNombreOptions {
 
 	@Test
 	void Test() {
@@ -99,8 +99,6 @@ class GarageTestPrix {
 		dx.addOption(new SiegeChauffant());
 		dx.addOption(new SiegeChauffant());
 		dx.setPrixTotalVehicule(100000.0);
-		System.out.print("87 dx.getPrixTotalVehicule() : ");
-		System.out.println(dx.getPrixTotalVehicule());
 		System.out.println("Vehicule.NOMBRE_OPTION : ");
 		System.out.println(Vehicule.NOMBRE_OPTION);
 		System.out.println("Nombre d'option de ce véhicule: ");
