@@ -81,7 +81,6 @@ class GarageTest {
 
 		// Creation de la liste 2
 		List<Vehicule> listeVehicules2 = new ArrayList<>();
-		Integer longueurListeVehicule2 = listeVehicules2.size();
 		
 		/** creation d'un doublon d'immatriculation pour tests JUnit *************/
 		Vehicule d4_21 = new D4();
