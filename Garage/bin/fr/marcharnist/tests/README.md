@@ -50,7 +50,7 @@ Créer deux listes comparables de véhicules, pour supprimer les doublons, avant d
  
  Corriger | Observations
  ---------- | ----------
- Il est primordial d'utiliser les assertions (assertTrue, assertEquals...) pour bien contrôler les valeurs retournées. | En cours d'étude 30/09/19
+ Il est primordial d'utiliser les assertions (assertTrue, assertEquals...) pour bien contrôler les valeurs retournées. | [GarageTestDoublons ligne 143: un test unitaire avec assertEquals()](https://github.com/MarcHarnist/Garage/blob/dev/Garage/src/fr/marcharnist/tests/GarageTestDoublons.java "Voir le code")
  Utiliser le fail pour faire planter un test si on sait que le code ne devrait pas passer à cet endroit. | 
  
  ### Idées de tests ###
